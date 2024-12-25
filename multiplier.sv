@@ -1,4 +1,4 @@
-`include "fpu_lib.sv"
+//`include "fpu_lib.sv"
 
 module multiplier #(parameter exp_width = 8, parameter mant_width = 24) 
 (
