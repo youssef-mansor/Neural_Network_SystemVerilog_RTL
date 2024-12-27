@@ -1,7 +1,7 @@
-`include "fpu_lib.sv"
-`include "add_sub.sv"
-`include "multiplier.sv"
-`include "dot_product.sv"
+//`include "fpu_lib.sv"
+//`include "add_sub.sv"
+//`include "multiplier.sv"
+//`include "dot_product.sv"
 
 module matrix_multiply_1x2_2x1 #(
     parameter exp_width = 8,

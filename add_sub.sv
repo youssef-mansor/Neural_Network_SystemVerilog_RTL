@@ -18,7 +18,7 @@
 module add_sub( 
   input  wire [31:0] in_x,
   input  wire [31:0] in_y,
-  input  wire        operation,
+  input  wire        operation, //zero for addition
   input  wire [2:0]  round_mode,
   output wire [31:0] out_z,
   output wire [4:0]  exceptions);

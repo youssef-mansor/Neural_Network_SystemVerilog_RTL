@@ -1,7 +1,7 @@
-`include "fpu_lib.sv"
-`include "add_sub.sv"
-`include "multiplier.sv"
-`include "divider.sv"
+//`include "fpu_lib.sv"
+//`include "add_sub.sv"
+//`include "multiplier.sv"
+//`include "divider.sv"
 
 module sigmoid_approx #(parameter exp_width = 8, parameter mant_width = 24)
 (
@@ -11,7 +11,8 @@ module sigmoid_approx #(parameter exp_width = 8, parameter mant_width = 24)
     input wire [2:0] round_mode,
     
     output wire [(exp_width + mant_width - 1):0] out_sigmoid,
-    output wire [4:0] exceptions
+    output wire [4:0] exceptions,
+    output wire out_valid //indicates when output is ready because calculations take multiple cycles
 );
 
   // Internal Wires for intermediate calculations
@@ -209,5 +210,6 @@ module sigmoid_approx #(parameter exp_width = 8, parameter mant_width = 24)
 
   //  Consolidated Error Output
   assign exceptions = add_exceptions | sub_exceptions_1 | sub_exceptions_2 | div_exceptions_1 | div_exceptions_2 | mul_exceptions_1 | mul_exceptions_2;
+  assign out_valid = (x_is_negative) ? div_inst1_out_valid : div_inst2_out_valid;
   
 endmodule
