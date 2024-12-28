@@ -16,15 +16,15 @@ module matrix_multiply_2x2_2x1 #(
     input  wire [2:0]                          round_mode,
     
     output wire [(exp_width + mant_width-1):0] c1,
-    output wire [(exp_width + mant_width-1):0] c2,
-    output wire [4:0]                         exceptions // combined exceptions from all operations
+    output wire [(exp_width + mant_width-1):0] c2
+    //output wire [4:0]                         exceptions // combined exceptions from all operations
 );
     
     // Internal signals for intermediate values and connections
     wire [(exp_width + mant_width)-1:0] p11, p12, p21, p22;
-    wire [4:0]                          mult_exceptions_11, mult_exceptions_12, mult_exceptions_21, mult_exceptions_22;
+   // wire [4:0]                          mult_exceptions_11, mult_exceptions_12, mult_exceptions_21, mult_exceptions_22;
     wire [(exp_width + mant_width-1):0] temp_c1, temp_c2;
-    wire [4:0]                          add_exceptions_c1, add_exceptions_c2;
+   // wire [4:0]                          add_exceptions_c1, add_exceptions_c2;
     
     // Instantiate multipliers
     multiplier #(
@@ -34,7 +34,8 @@ module matrix_multiply_2x2_2x1 #(
         .a(a11),
         .b(b1),
         .round_mode(round_mode),
-        .exceptions(mult_exceptions_11),
+        //.exceptions(mult_exceptions_11),
+        .exceptions(),
         .out(p11)
     );
     
@@ -45,7 +46,8 @@ module matrix_multiply_2x2_2x1 #(
         .a(a12),
         .b(b2),
         .round_mode(round_mode),
-        .exceptions(mult_exceptions_12),
+        //.exceptions(mult_exceptions_12),
+        .exceptions(),
         .out(p12)
     );
 
@@ -56,7 +58,8 @@ module matrix_multiply_2x2_2x1 #(
         .a(a21),
         .b(b1),
         .round_mode(round_mode),
-        .exceptions(mult_exceptions_21),
+        //.exceptions(mult_exceptions_21),
+        .exceptions(),
         .out(p21)
     );
     
@@ -67,7 +70,8 @@ module matrix_multiply_2x2_2x1 #(
         .a(a22),
         .b(b2),
         .round_mode(round_mode),
-        .exceptions(mult_exceptions_22),
+        //.exceptions(mult_exceptions_22),
+        .exceptions(),
         .out(p22)
     );
     
@@ -78,7 +82,8 @@ module matrix_multiply_2x2_2x1 #(
         .operation(1'b0), // 0 for add, 1 for sub
         .round_mode(round_mode),
         .out_z(temp_c1),
-        .exceptions(add_exceptions_c1)
+        .exceptions()
+        //.exceptions(add_exceptions_c1)
     );
     
      add_sub add_c2 (
@@ -87,7 +92,8 @@ module matrix_multiply_2x2_2x1 #(
         .operation(1'b0), // 0 for add, 1 for sub
         .round_mode(round_mode),
         .out_z(temp_c2),
-        .exceptions(add_exceptions_c2)
+        .exceptions()
+        //.exceptions(add_exceptions_c2)
     );
 
 
@@ -95,7 +101,7 @@ module matrix_multiply_2x2_2x1 #(
      assign c2 = temp_c2;
 
      // Combine exceptions using a bitwise OR operation
-    assign exceptions = mult_exceptions_11 | mult_exceptions_12 | mult_exceptions_21 | mult_exceptions_22 | add_exceptions_c1 | add_exceptions_c2;
+    //assign exceptions = mult_exceptions_11 | mult_exceptions_12 | mult_exceptions_21 | mult_exceptions_22 | add_exceptions_c1 | add_exceptions_c2;
     
 
 endmodule

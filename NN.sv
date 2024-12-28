@@ -29,8 +29,8 @@ module NN #(
      input wire [2:0] round_mode,
 
     // Output: XOR result
-    output wire  [(exp_width + mant_width - 1):0] XOR_output,
-    output wire  [4:0] exceptions
+    output wire  [(exp_width + mant_width - 1):0] XOR_output
+    //output wire  [4:0] exceptions
 );
 
     // Internal Wires for Hidden Layer
@@ -40,18 +40,18 @@ module NN #(
     wire [(exp_width + mant_width - 1):0] h2_out;
     wire [(exp_width + mant_width - 1):0] output_pre_sigmoid;
     wire [(exp_width + mant_width - 1):0] output_pre_sigmoid_and_bias;
-    wire [4:0] exceptions_mm1,exceptions_mm2,exceptions_sig1,exceptions_sig2,exceptions_add1,exceptions_add2,exceptions_sig3;
+    //wire [4:0] exceptions_mm1,exceptions_mm2,exceptions_sig1,exceptions_sig2,exceptions_add1,exceptions_add2, exceptions_add3,exceptions_sig3;
     wire out_valid_sig1,out_valid_sig2,out_valid_sig3;
     wire [(exp_width + mant_width - 1):0] intermediate_add1;
     wire [(exp_width + mant_width - 1):0] intermediate_add2;
-    wire [4:0] exceptions_total;
+    //wire [4:0] exceptions_total;
 
 
 
     
-    assign exceptions_total = exceptions_mm1 | exceptions_mm2 | exceptions_sig1|exceptions_sig2 | exceptions_add1|exceptions_add2|exceptions_sig3;
+    //assign exceptions_total = exceptions_mm1 | exceptions_mm2 | exceptions_sig1|exceptions_sig2 | exceptions_add1|exceptions_add2|exceptions_add3|exceptions_sig3;
     
-    assign exceptions = exceptions_total;
+    //assign exceptions = exceptions_total;
 
 
     // Instantiate matrix multiplication module for the first layer
@@ -68,7 +68,8 @@ module NN #(
         .round_mode(round_mode),
         .c1(intermediate_add1),
         .c2(intermediate_add2),
-        .exceptions(exceptions_mm1)
+        .exceptions()
+        //.exceptions(exceptions_mm1)
     );
     
        add_sub #(
@@ -78,7 +79,8 @@ module NN #(
             .operation(1'b0),
             .round_mode(round_mode),
             .out_z(h1_pre_sigmoid),
-            .exceptions(exceptions_add1)
+        	.exceptions()
+            //.exceptions(exceptions_add1)
        );
 
        add_sub #(
@@ -88,7 +90,8 @@ module NN #(
            .operation(1'b0),
            .round_mode(round_mode),
            .out_z(h2_pre_sigmoid),
-           .exceptions(exceptions_add2)
+	.exceptions()
+          // .exceptions(exceptions_add2)
        );
 
     // Instantiate sigmoid activation function for the first hidden neuron
@@ -101,7 +104,8 @@ module NN #(
         .rst_l(rst_l),
         .round_mode(round_mode),
         .out_sigmoid(h1_out),
-        .exceptions(exceptions_sig1),
+        .exceptions(),
+        //.exceptions(exceptions_sig1)
         .out_valid(out_valid_sig1)
     );
 
@@ -115,7 +119,8 @@ module NN #(
         .rst_l(rst_l),
         .round_mode(round_mode),
         .out_sigmoid(h2_out),
-         .exceptions(exceptions_sig2),
+        .exceptions(),
+         //.exceptions(exceptions_sig2)
          .out_valid(out_valid_sig2)
      );
 
@@ -130,7 +135,8 @@ module NN #(
         .b2(h2_out),
         .round_mode(round_mode),
         .c1(output_pre_sigmoid),
-        .exceptions(exceptions_mm2)
+        .exceptions()
+        //.exceptions(exceptions_mm2)
     );
         
      add_sub #(
@@ -140,7 +146,8 @@ module NN #(
            .operation(1'b0),
            .round_mode(round_mode),
            .out_z(output_pre_sigmoid_and_bias),
-           .exceptions(exceptions_add1)
+           .exceptions()
+           //.exceptions(exceptions_add1)
        );
 
     // Instantiate sigmoid activation function for the output neuron
@@ -153,7 +160,8 @@ module NN #(
         .rst_l(rst_l),
         .round_mode(round_mode),
         .out_sigmoid(XOR_output),
-        .exceptions(exceptions_sig3),
+        .exceptions(),
+        //.exceptions(exceptions_sig3)
         .out_valid(out_valid_sig3)
     );
 
