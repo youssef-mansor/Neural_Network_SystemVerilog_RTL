@@ -11,7 +11,7 @@ module sigmoid_approx #(parameter exp_width = 8, parameter mant_width = 24)
     input wire [2:0] round_mode,
     
     output wire [(exp_width + mant_width - 1):0] out_sigmoid,
-    output wire [4:0] exceptions,
+   // output wire [4:0] exceptions,
     output wire out_valid //indicates when output is ready because calculations take multiple cycles
 );
 
@@ -44,7 +44,7 @@ module sigmoid_approx #(parameter exp_width = 8, parameter mant_width = 24)
   reg [1:0] div_inst2_in_valid_counter;
 
   // Error exception wires
-  wire [4:0] add_exceptions, sub_exceptions_1, sub_exceptions_2, div_exceptions_1, div_exceptions_2, mul_exceptions_1, mul_exceptions_2;
+  //wire [4:0] add_exceptions, sub_exceptions_1, sub_exceptions_2, div_exceptions_1, div_exceptions_2, mul_exceptions_1, mul_exceptions_2;
   
     //  Assigning floating point values for 0.5 and 1
   assign half_val = 32'h3f000000; // 0.5 in FP representation
@@ -66,7 +66,8 @@ module sigmoid_approx #(parameter exp_width = 8, parameter mant_width = 24)
     .operation(1'b0), // operation = 0 for addition 
     .round_mode(round_mode),
     .out_z(one_minus_x),
-    .exceptions(sub_exceptions_1)
+    .exceptions()
+    //.exceptions(sub_exceptions_1)
   );
   //(or 1 + x, based on sign)
    add_sub  add_sub_inst2(
@@ -75,7 +76,8 @@ module sigmoid_approx #(parameter exp_width = 8, parameter mant_width = 24)
     .operation(1'b0),
     .round_mode(round_mode),
     .out_z(one_plus_x),
-    .exceptions(add_exceptions)
+    .exceptions()
+   // .exceptions(add_exceptions)
    );
 
 
@@ -92,7 +94,8 @@ module sigmoid_approx #(parameter exp_width = 8, parameter mant_width = 24)
     .in_ready(),
     .out_valid(div_inst1_out_valid),
     .out(x_div_one_minus_x),
-    .exceptions(div_exceptions_1)
+    .exceptions()
+    //.exceptions(div_exceptions_1)
   );
 //and x / (1+x)
   divider #( .exp_width(exp_width), .mant_width(mant_width)) 
@@ -107,7 +110,8 @@ module sigmoid_approx #(parameter exp_width = 8, parameter mant_width = 24)
     .in_ready(),
     .out_valid(div_inst2_out_valid),
     .out(x_div_one_plus_x),
-    .exceptions(div_exceptions_2)
+    .exceptions()
+    //.exceptions(div_exceptions_2)
   );
     
 // Register the output of divider once valid
@@ -163,7 +167,8 @@ end
     .operation(1'b0), // addition
     .round_mode(round_mode),
     .out_z(term1),
-     .exceptions(sub_exceptions_2)
+    .exceptions()
+     //.exceptions(sub_exceptions_2)
   );
 // 1 + (x/(1+x)) 
   add_sub  add_sub_inst4(
@@ -172,7 +177,8 @@ end
     .operation(1'b0), // addition
     .round_mode(round_mode),
     .out_z(term2),
-    .exceptions(sub_exceptions_2)
+    .exceptions()
+    //.exceptions(sub_exceptions_2)
   );
     
 
@@ -182,7 +188,8 @@ end
     .a(half_val),
     .b(term1),
     .round_mode(round_mode),
-    .exceptions(mul_exceptions_1),
+    .exceptions(),
+   // .exceptions(mul_exceptions_1),
     .out(term1_pre)
   );
   
@@ -194,6 +201,7 @@ end
     .round_mode(round_mode),
     .out_z(term1_final),
     .exceptions()
+   // .exceptions()
   );
 
   multiplier #( .exp_width(exp_width), .mant_width(mant_width)) 
@@ -201,7 +209,8 @@ end
     .a(half_val),
     .b(term2),
     .round_mode(round_mode),
-    .exceptions(mul_exceptions_2),
+   // .exceptions(mul_exceptions_2),
+   .exceptions(),
     .out(term2_final)
   );
 
@@ -209,7 +218,7 @@ end
   assign out_sigmoid = (x_is_negative) ? term1_final : term2_final; 
 
   //  Consolidated Error Output
-  assign exceptions = add_exceptions | sub_exceptions_1 | sub_exceptions_2 | div_exceptions_1 | div_exceptions_2 | mul_exceptions_1 | mul_exceptions_2;
+ // assign exceptions = add_exceptions | sub_exceptions_1 | sub_exceptions_2 | div_exceptions_1 | div_exceptions_2 | mul_exceptions_1 | mul_exceptions_2;
   assign out_valid = (x_is_negative) ? div_inst1_out_valid : div_inst2_out_valid;
   
 endmodule

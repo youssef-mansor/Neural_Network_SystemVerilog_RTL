@@ -1,6 +1,6 @@
 <testsuites name="results">
   <testsuite name="all" package="all">
-    <property name="random_seed" value="1735404091" />
-    <testcase name="nn_testbench" classname="NN_cocotb" file="/home/youssef/digital_design/MatrixMult/NN_cocotb.py" lineno="1" time="0.2762289047241211" sim_time_ns="2400.001" ratio_time="8688.449901348884" />
+    <property name="random_seed" value="1735404882" />
+    <testcase name="nn_testbench" classname="NN_cocotb" file="/home/youssef/digital_design/MatrixMult/NN_cocotb.py" lineno="1" time="0.2680683135986328" sim_time_ns="2400.001" ratio_time="8952.945492817247" />
   </testsuite>
 </testsuites>

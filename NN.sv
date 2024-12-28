@@ -67,8 +67,7 @@ module NN #(
         .b2(B),
         .round_mode(round_mode),
         .c1(intermediate_add1),
-        .c2(intermediate_add2),
-        .exceptions()
+        .c2(intermediate_add2)
         //.exceptions(exceptions_mm1)
     );
     
@@ -104,7 +103,7 @@ module NN #(
         .rst_l(rst_l),
         .round_mode(round_mode),
         .out_sigmoid(h1_out),
-        .exceptions(),
+
         //.exceptions(exceptions_sig1)
         .out_valid(out_valid_sig1)
     );
@@ -119,7 +118,7 @@ module NN #(
         .rst_l(rst_l),
         .round_mode(round_mode),
         .out_sigmoid(h2_out),
-        .exceptions(),
+
          //.exceptions(exceptions_sig2)
          .out_valid(out_valid_sig2)
      );
@@ -134,8 +133,7 @@ module NN #(
         .b1(h1_out),
         .b2(h2_out),
         .round_mode(round_mode),
-        .c1(output_pre_sigmoid),
-        .exceptions()
+        .c1(output_pre_sigmoid)
         //.exceptions(exceptions_mm2)
     );
         
@@ -160,7 +158,7 @@ module NN #(
         .rst_l(rst_l),
         .round_mode(round_mode),
         .out_sigmoid(XOR_output),
-        .exceptions(),
+
         //.exceptions(exceptions_sig3)
         .out_valid(out_valid_sig3)
     );
