@@ -1,7 +1,7 @@
-`include "fpu_lib.sv"
-`include "add_sub.sv"
-`include "multiplier.sv"
-`include "divider.sv"
+//`include "fpu_lib.sv"
+//`include "add_sub.sv"
+//`include "multiplier.sv"
+//`include "divider.sv"
 
 module sigmoid_approx #(parameter exp_width = 8, parameter mant_width = 24)
 (
