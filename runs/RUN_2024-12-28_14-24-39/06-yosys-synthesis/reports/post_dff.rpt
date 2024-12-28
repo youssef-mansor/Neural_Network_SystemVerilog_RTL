@@ -1,0 +1,40 @@
+187. Printing statistics.
+
+=== NN ===
+
+   Number of wires:              63041
+   Number of wire bits:          64463
+   Number of public wires:         101
+   Number of public wire bits:    1499
+   Number of ports:                 16
+   Number of port bits:            394
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:              63782
+     $_ANDNOT_                   18567
+     $_AND_                       1231
+     $_MUX_                       8126
+     $_NAND_                      1268
+     $_NOR_                       6877
+     $_NOT_                       2257
+     $_ORNOT_                     2621
+     $_OR_                       13176
+     $_XNOR_                      3495
+     $_XOR_                       5750
+     sky130_fd_sc_hd__dfrtp_2      414
+
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+
+   Chip area for module '\NN': 10877.932800
+     of which used for sequential elements: 10877.932800 (100.00%)
+
