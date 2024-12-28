@@ -1,7 +1,6 @@
 `include "fpu_lib.sv"
 `include "add_sub.sv"
 `include "multiplier.sv"
-`include "dot_product.sv"
 `include "divider.sv"
 `include "matrix_multiply_1x2_2x1.sv"
 `include "matrix_multiply_2x2_2x1.sv"

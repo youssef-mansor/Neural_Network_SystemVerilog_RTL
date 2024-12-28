@@ -1,0 +1,480 @@
+%Warning-PINCONNECTEMPTY: fpu_lib.sv:667:38: Cell pin connected by name with empty reference: 'is_sNaN'
+  667 |                                     .is_sNaN(), .sign(sign_res), .s_exp(s_exp), .sig(mant));
+      |                                      ^~~~~~~
+                          /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:2:1: ... note: In file included from 'NN.sv'
+                          ... For warning description see https://verilator.org/warn/PINCONNECTEMPTY?v=5.018
+                          ... Use "/* verilator lint_off PINCONNECTEMPTY */" and lint_on around source to disable this message.
+%Warning-PINCONNECTEMPTY: sigmoid_v4.sv:89:6: Cell pin connected by name with empty reference: 'in_ready'
+   89 |     .in_ready(),
+      |      ^~~~~~~~
+                          /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:8:1: ... note: In file included from 'NN.sv'
+%Warning-PINCONNECTEMPTY: sigmoid_v4.sv:104:6: Cell pin connected by name with empty reference: 'in_ready'
+  104 |     .in_ready(),
+      |      ^~~~~~~~
+                          /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:8:1: ... note: In file included from 'NN.sv'
+%Warning-PINCONNECTEMPTY: sigmoid_v4.sv:196:6: Cell pin connected by name with empty reference: 'exceptions'
+  196 |     .exceptions()
+      |      ^~~~~~~~~~
+                          /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:8:1: ... note: In file included from 'NN.sv'
+%Warning-GENUNNAMED: fpu_lib.sv:573:88: Unnamed generate block 'genblk1' (IEEE 1800-2017 27.6)
+                                      : ... Suggest assign a label with 'begin : gen_<label_name>'
+  573 |   if ( neverOverflows && neverUnderflows && (effectiveInSigWidth <= out_mant_width) )  begin
+      |                                                                                        ^~~~~
+                     /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:2:1: ... note: In file included from 'NN.sv'
+%Warning-GENUNNAMED: fpu_lib.sv:577:7: Unnamed generate block 'genblk1' (IEEE 1800-2017 27.6)
+                                     : ... Suggest assign a label with 'begin : gen_<label_name>'
+  577 |  else begin
+      |       ^~~~~
+                     /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:2:1: ... note: In file included from 'NN.sv'
+%Warning-GENUNNAMED: fpu_lib.sv:581:23: Unnamed generate block 'genblk1' (IEEE 1800-2017 27.6)
+                                      : ... Suggest assign a label with 'begin : gen_<label_name>'
+  581 |  if (neverUnderflows) begin
+      |                       ^~~~~
+                     /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:2:1: ... note: In file included from 'NN.sv'
+%Warning-GENUNNAMED: fpu_lib.sv:584:7: Unnamed generate block 'genblk1' (IEEE 1800-2017 27.6)
+                                     : ... Suggest assign a label with 'begin : gen_<label_name>'
+  584 |  else begin
+      |       ^~~~~
+                     /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:2:1: ... note: In file included from 'NN.sv'
+%Warning-GENUNNAMED: fpu_lib.sv:289:17: Unnamed generate block 'genblk1' (IEEE 1800-2017 27.6)
+                                      : ... Suggest assign a label with 'begin : gen_<label_name>'
+  289 | if (SHORT == 1) begin
+      |                 ^~~~~
+                     /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:2:1: ... note: In file included from 'NN.sv'
+%Warning-GENUNNAMED: fpu_lib.sv:292:6: Unnamed generate block 'genblk1' (IEEE 1800-2017 27.6)
+                                     : ... Suggest assign a label with 'begin : gen_<label_name>'
+  292 | else begin
+      |      ^~~~~
+                     /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:2:1: ... note: In file included from 'NN.sv'
+%Warning-GENUNNAMED: fpu_lib.sv:483:20: Unnamed generate block 'genblk1' (IEEE 1800-2017 27.6)
+                                      : ... Suggest assign a label with 'begin : gen_<label_name>'
+  483 |       if (ix == 0) begin
+      |                    ^~~~~
+                     /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:2:1: ... note: In file included from 'NN.sv'
+%Warning-GENUNNAMED: fpu_lib.sv:486:12: Unnamed generate block 'genblk1' (IEEE 1800-2017 27.6)
+                                      : ... Suggest assign a label with 'begin : gen_<label_name>'
+  486 |       else begin
+      |            ^~~~~
+                     /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:2:1: ... note: In file included from 'NN.sv'
+%Warning-GENUNNAMED: fpu_lib.sv:489:20: Unnamed generate block 'genblk1' (IEEE 1800-2017 27.6)
+                                      : ... Suggest assign a label with 'begin : gen_<label_name>'
+  489 |       assign count = count_so_far;
+      |                    ^
+                     /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:2:1: ... note: In file included from 'NN.sv'
+%Warning-VARHIDDEN: divider.sv:35:17: Declaration of signal hides declaration in upper scope: 'a'
+   35 |   input integer a;
+      |                 ^
+                    /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:5:1: ... note: In file included from 'NN.sv'
+                    divider.sv:23:45: ... Location of original declaration
+   23 |   input wire [(exp_width + mant_width)-1:0] a,
+      |                                             ^
+%Warning-WIDTHTRUNC: fpu_lib.sv:427:33: Operator ASSIGNW expects 25 bits on the Assign RHS, but Assign RHS's SHIFTR generates 513 bits.
+                                      : ... note: In instance 'NN.mm_layer2.mult12.round_exception.genblk1.genblk1.lowmask_roundmask'
+  427 |   assign reverse_out            = (c>>>~in)>>(top_bound + 1);
+      |                                 ^
+                     /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:2:1: ... note: In file included from 'NN.sv'
+%Warning-WIDTHEXPAND: fpu_lib.sv:95:28: Operator ASSIGNW expects 10 bits on the Assign RHS, but Assign RHS's VARREF 'exp' generates 9 bits.
+                                      : ... note: In instance 'NN.sigmoid_out.div_inst2.mac_spec_check_a'
+   95 |   assign s_exp             = exp;
+      |                            ^
+                      /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:2:1: ... note: In file included from 'NN.sv'
+%Warning-WIDTHEXPAND: fpu_lib.sv:589:37: Operator OR expects 25 bits on the RHS, but RHS's VARREF 'do_shift_mant_down1' generates 1 bits.
+                                       : ... note: In instance 'NN.mm_layer2.mult12.round_exception'
+  589 |  assign roundMask = {roundMask_main | do_shift_mant_down1, 2'b11};
+      |                                     ^
+                      /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:2:1: ... note: In file included from 'NN.sv'
+%Warning-WIDTHTRUNC: fpu_lib.sv:605:27: Operator ASSIGNW expects 26 bits on the Assign RHS, but Assign RHS's COND generates 32 or 27 bits.
+                                      : ... note: In instance 'NN.mm_layer2.mult12.round_exception'
+  605 |  assign rounded_mant      = round_incr ? (((adjusted_mant | roundMask)>>2) + 1) & ~(roundmode_near_even && round_pos_bit && !any_round_extra
+      |                           ^
+                     /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:2:1: ... note: In file included from 'NN.sv'
+%Warning-WIDTHEXPAND: fpu_lib.sv:607:27: Operator ASSIGNW expects 11 bits on the Assign RHS, but Assign RHS's VARREF 'adjusted_sexp' generates 10 bits.
+                                       : ... note: In instance 'NN.mm_layer2.mult12.round_exception'
+  607 |  assign sext_adjusted_exp = adjusted_sexp;
+      |                           ^
+                      /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:2:1: ... note: In file included from 'NN.sv'
+%Warning-WIDTHEXPAND: fpu_lib.sv:608:47: Operator ADD expects 26 bits on the LHS, but LHS's VARREF 'sext_adjusted_exp' generates 11 bits.
+                                       : ... note: In instance 'NN.mm_layer2.mult12.round_exception'
+  608 |  assign s_rounded_exp     = sext_adjusted_exp + (rounded_mant>>out_mant_width);
+      |                                               ^
+                      /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:2:1: ... note: In file included from 'NN.sv'
+%Warning-WIDTHTRUNC: fpu_lib.sv:608:27: Operator ASSIGNW expects 11 bits on the Assign RHS, but Assign RHS's ADD generates 26 bits.
+                                      : ... note: In instance 'NN.mm_layer2.mult12.round_exception'
+  608 |  assign s_rounded_exp     = sext_adjusted_exp + (rounded_mant>>out_mant_width);
+      |                           ^
+                     /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:2:1: ... note: In file included from 'NN.sv'
+%Warning-WIDTHTRUNC: fpu_lib.sv:611:31: Operator ASSIGNW expects 9 bits on the Assign RHS, but Assign RHS's VARREF 's_rounded_exp' generates 11 bits.
+                                      : ... note: In instance 'NN.mm_layer2.mult12.round_exception'
+  611 |  assign common_exp_out        = s_rounded_exp;
+      |                               ^
+                     /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:2:1: ... note: In file included from 'NN.sv'
+%Warning-WIDTHTRUNC: fpu_lib.sv:612:32: Operator ASSIGNW expects 23 bits on the Assign RHS, but Assign RHS's COND generates 26 bits.
+                                      : ... note: In instance 'NN.mm_layer2.mult12.round_exception'
+  612 |  assign common_mant_out        = do_shift_mant_down1 ? rounded_mant>>1 : rounded_mant;
+      |                                ^
+                     /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:2:1: ... note: In file included from 'NN.sv'
+%Warning-WIDTHEXPAND: fpu_lib.sv:668:29: Operator LT expects 10 bits on the RHS, but RHS's VARREF 'min_norm_exp' generates 9 bits.
+                                       : ... note: In instance 'NN.mm_layer2.mult12.round_exception'
+  668 |  assign is_subnorm = (s_exp < min_norm_exp);
+      |                             ^
+                      /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:2:1: ... note: In file included from 'NN.sv'
+%Warning-WIDTHTRUNC: fpu_lib.sv:670:29: Operator ASSIGNW expects 5 bits on the Assign RHS, but Assign RHS's SUB generates 32 or 10 bits.
+                                      : ... note: In instance 'NN.mm_layer2.mult12.round_exception'
+  670 |   assign subnorm_shift_dist = min_norm_exp - 1 - s_exp;
+      |                             ^
+                     /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:2:1: ... note: In file included from 'NN.sv'
+%Warning-WIDTHEXPAND: fpu_lib.sv:671:90: Operator COND expects 32 or 10 bits on the Conditional True, but Conditional True's REPLICATE generates 8 bits.
+                                       : ... note: In instance 'NN.mm_layer2.mult12.round_exception'
+  671 |   assign exp_res       = (is_subnorm ? 0 : s_exp - min_norm_exp + 1) | (is_NaN || is_inf ? {out_exp_width{1'b1}} : 0);
+      |                                                                                          ^
+                      /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:2:1: ... note: In file included from 'NN.sv'
+%Warning-WIDTHTRUNC: fpu_lib.sv:671:24: Operator ASSIGNW expects 8 bits on the Assign RHS, but Assign RHS's OR generates 32 or 10 bits.
+                                      : ... note: In instance 'NN.mm_layer2.mult12.round_exception'
+  671 |   assign exp_res       = (is_subnorm ? 0 : s_exp - min_norm_exp + 1) | (is_NaN || is_inf ? {out_exp_width{1'b1}} : 0);
+      |                        ^
+                     /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:2:1: ... note: In file included from 'NN.sv'
+%Warning-WIDTHTRUNC: fpu_lib.sv:672:24: Operator ASSIGNW expects 23 bits on the Assign RHS, but Assign RHS's COND generates 32 or 25 bits.
+                                      : ... note: In instance 'NN.mm_layer2.mult12.round_exception'
+  672 |   assign mant_res      = is_subnorm ? (mant>>1)>>subnorm_shift_dist : is_inf ? 0 : mant;
+      |                        ^
+                     /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:2:1: ... note: In file included from 'NN.sv'
+%Warning-WIDTHEXPAND: fpu_lib.sv:376:50: Operator XOR expects 32 or 9 bits on the LHS, but LHS's VARREF 'norm_dist' generates 5 bits.
+                                       : ... note: In instance 'NN.sigmoid_out.div_inst2.exp_b'
+  376 |   assign exp_adjusted = (exp_in_zero ? norm_dist ^ ((1<<(exp_width + 1)) - 1) : exp_in) + ((1<<(exp_width - 1)) | (exp_in_zero ? 2 : 1));
+      |                                                  ^
+                      /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:2:1: ... note: In file included from 'NN.sv'
+%Warning-WIDTHEXPAND: fpu_lib.sv:376:38: Operator COND expects 32 or 9 bits on the Conditional False, but Conditional False's VARREF 'exp_in' generates 8 bits.
+                                       : ... note: In instance 'NN.sigmoid_out.div_inst2.exp_b'
+  376 |   assign exp_adjusted = (exp_in_zero ? norm_dist ^ ((1<<(exp_width + 1)) - 1) : exp_in) + ((1<<(exp_width - 1)) | (exp_in_zero ? 2 : 1));
+      |                                      ^
+                      /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:2:1: ... note: In file included from 'NN.sv'
+%Warning-WIDTHTRUNC: fpu_lib.sv:381:41: Operator ASSIGNW expects 6 bits on the Assign RHS, but Assign RHS's VARREF 'exp_adjusted' generates 9 bits.
+                                      : ... note: In instance 'NN.sigmoid_out.div_inst2.exp_b'
+  381 |   assign exp[(exp_width - 3):0]         = exp_adjusted;
+      |                                         ^
+                     /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:2:1: ... note: In file included from 'NN.sv'
+%Warning-WIDTHEXPAND: fpu_lib.sv:114:57: Operator ADD expects 25 bits on the RHS, but RHS's SEL generates 1 bits.
+                                       : ... note: In instance 'NN.mm_layer2.add_c1.add_sub_rounder'
+  114 |                                : ({1'b0, mantisa[26:3]} + mantisa[3])) : {1'b0, mantisa[26:3]};
+      |                                                         ^
+                      /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:2:1: ... note: In file included from 'NN.sv'
+%Warning-WIDTHEXPAND: divider.sv:150:51: Operator SHIFTL expects 32 or 27 bits on the LHS, but LHS's VARREF 'mant_a' generates 25 bits.
+                                       : ... note: In instance 'NN.sigmoid_out.div_inst2'
+  150 |   assign rem                  = (in_ready ? mant_a<<1 : 0) | (!in_ready ? rem_z<<1 : 0);
+      |                                                   ^~
+                      /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:5:1: ... note: In file included from 'NN.sv'
+%Warning-WIDTHEXPAND: divider.sv:150:80: Operator SHIFTL expects 32 or 27 bits on the LHS, but LHS's VARREF 'rem_z' generates 26 bits.
+                                       : ... note: In instance 'NN.sigmoid_out.div_inst2'
+  150 |   assign rem                  = (in_ready ? mant_a<<1 : 0) | (!in_ready ? rem_z<<1 : 0);
+      |                                                                                ^~
+                      /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:5:1: ... note: In file included from 'NN.sv'
+%Warning-WIDTHTRUNC: divider.sv:151:31: Operator ASSIGNW expects 25 bits on the Assign RHS, but Assign RHS's SHIFTR generates 27 bits.
+                                      : ... note: In instance 'NN.sigmoid_out.div_inst2'
+  151 |   assign bit_mask             = ({{(mant_width + 2){1'b0}}, 1'b1}<<cycle_num)>>2;
+      |                               ^
+                     /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:5:1: ... note: In file included from 'NN.sv'
+%Warning-WIDTHEXPAND: divider.sv:152:52: Operator SHIFTL expects 32 or 26 bits on the LHS, but LHS's VARREF 'mant_b' generates 25 bits.
+                                       : ... note: In instance 'NN.sigmoid_out.div_inst2'
+  152 |   assign trail_term           = ( in_ready ? mant_b<<1           : 0)
+      |                                                    ^~
+                      /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:5:1: ... note: In file included from 'NN.sv'
+%Warning-WIDTHEXPAND: divider.sv:153:62: Operator SHIFTL expects 32 or 26 bits on the LHS, but LHS's REPLICATE generates 24 bits.
+                                       : ... note: In instance 'NN.sigmoid_out.div_inst2'
+  153 |                                |(!in_ready ? {1'b1, mant_b_z}<<1 : 0);
+      |                                                              ^~
+                      /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:5:1: ... note: In file included from 'NN.sv'
+%Warning-WIDTHEXPAND: divider.sv:154:37: Operator SUB expects 28 bits on the RHS, but RHS's VARREF 'trail_term' generates 26 bits.
+                                       : ... note: In instance 'NN.sigmoid_out.div_inst2'
+  154 |   assign trail_rem            = rem - trail_term;
+      |                                     ^
+                      /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:5:1: ... note: In file included from 'NN.sv'
+%Warning-WIDTHEXPAND: divider.sv:157:29: Operator COND expects 28 bits on the Conditional False, but Conditional False's VARREF 'rem' generates 27 bits.
+                                       : ... note: In instance 'NN.sigmoid_out.div_inst2'
+  157 |   assign rem_z_in = new_bit ? trail_rem : rem;
+      |                             ^
+                      /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:5:1: ... note: In file included from 'NN.sv'
+%Warning-WIDTHTRUNC: divider.sv:157:19: Operator ASSIGNW expects 26 bits on the Assign RHS, but Assign RHS's COND generates 28 bits.
+                                      : ... note: In instance 'NN.sigmoid_out.div_inst2'
+  157 |   assign rem_z_in = new_bit ? trail_rem : rem;
+      |                   ^
+                     /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:5:1: ... note: In file included from 'NN.sv'
+%Warning-WIDTHEXPAND: divider.sv:161:43: Operator SHIFTL expects 32 or 26 bits on the LHS, but LHS's VARREF 'new_bit' generates 1 bits.
+                                       : ... note: In instance 'NN.sigmoid_out.div_inst2'
+  161 |   assign mantx_z_in = ( in_ready ? new_bit<<(mant_width + 1) : 0)
+      |                                           ^~
+                      /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:5:1: ... note: In file included from 'NN.sv'
+%Warning-WIDTHEXPAND: divider.sv:162:46: Operator OR expects 32 or 26 bits on the RHS, but RHS's VARREF 'bit_mask' generates 25 bits.
+                                       : ... note: In instance 'NN.sigmoid_out.div_inst2'
+  162 |                       | (!in_ready ? mantx_z | bit_mask       : 0);
+      |                                              ^
+                      /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:5:1: ... note: In file included from 'NN.sv'
+%Warning-WIDTHEXPAND: multiplier.sv:57:68: Operator XOR expects 32 or 9 bits on the LHS, but LHS's VARREF 'norm_dist_a' generates 5 bits.
+                                         : ... note: In instance 'NN.mm_layer2.mult12'
+   57 |   assign adj_exp_a                     = (exp_a_zero ? norm_dist_a ^ ((1<<(exp_width + 1)) - 1) : exp_a) 
+      |                                                                    ^
+                      /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:4:1: ... note: In file included from 'NN.sv'
+%Warning-WIDTHEXPAND: multiplier.sv:57:54: Operator COND expects 32 or 9 bits on the Conditional False, but Conditional False's VARREF 'exp_a' generates 8 bits.
+                                         : ... note: In instance 'NN.mm_layer2.mult12'
+   57 |   assign adj_exp_a                     = (exp_a_zero ? norm_dist_a ^ ((1<<(exp_width + 1)) - 1) : exp_a) 
+      |                                                      ^
+                      /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:4:1: ... note: In file included from 'NN.sv'
+%Warning-WIDTHEXPAND: multiplier.sv:59:68: Operator XOR expects 32 or 9 bits on the LHS, but LHS's VARREF 'norm_dist_b' generates 5 bits.
+                                         : ... note: In instance 'NN.mm_layer2.mult12'
+   59 |   assign adj_exp_b                     = (exp_b_zero ? norm_dist_b ^ ((1<<(exp_width + 1)) - 1) : exp_b) 
+      |                                                                    ^
+                      /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:4:1: ... note: In file included from 'NN.sv'
+%Warning-WIDTHEXPAND: multiplier.sv:59:54: Operator COND expects 32 or 9 bits on the Conditional False, but Conditional False's VARREF 'exp_b' generates 8 bits.
+                                         : ... note: In instance 'NN.mm_layer2.mult12'
+   59 |   assign adj_exp_b                     = (exp_b_zero ? norm_dist_b ^ ((1<<(exp_width + 1)) - 1) : exp_b) 
+      |                                                      ^
+                      /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:4:1: ... note: In file included from 'NN.sv'
+%Warning-WIDTHTRUNC: multiplier.sv:67:40: Operator ASSIGNW expects 6 bits on the Assign RHS, but Assign RHS's VARREF 'adj_exp_a' generates 9 bits.
+                                        : ... note: In instance 'NN.mm_layer2.mult12'
+   67 |   assign expa[(exp_width - 3):0]       = adj_exp_a;
+      |                                        ^
+                     /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:4:1: ... note: In file included from 'NN.sv'
+%Warning-WIDTHTRUNC: multiplier.sv:70:40: Operator ASSIGNW expects 6 bits on the Assign RHS, but Assign RHS's VARREF 'adj_exp_b' generates 9 bits.
+                                        : ... note: In instance 'NN.mm_layer2.mult12'
+   70 |   assign expb[(exp_width - 3):0]       = adj_exp_b;
+      |                                        ^
+                     /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:4:1: ... note: In file included from 'NN.sv'
+%Warning-WIDTHEXPAND: multiplier.sv:78:40: Operator ASSIGNW expects 10 bits on the Assign RHS, but Assign RHS's VARREF 'exp_oper1' generates 9 bits.
+                                         : ... note: In instance 'NN.mm_layer2.mult12'
+   78 |   assign sexp_1                        = exp_oper1;
+      |                                        ^
+                      /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:4:1: ... note: In file included from 'NN.sv'
+%Warning-WIDTHEXPAND: multiplier.sv:79:40: Operator ASSIGNW expects 10 bits on the Assign RHS, but Assign RHS's VARREF 'exp_oper2' generates 9 bits.
+                                         : ... note: In instance 'NN.mm_layer2.mult12'
+   79 |   assign sexp_2                        = exp_oper2;
+      |                                        ^
+                      /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:4:1: ... note: In file included from 'NN.sv'
+%Warning-WIDTHEXPAND: add_sub.sv:127:50: Operator SUB expects 8 bits on the RHS, but RHS's REDOR generates 1 bits.
+                                       : ... note: In instance 'NN.mm_layer2.add_c1'
+  127 |   assign shft_amt       = exp_shft_comp ? (exp_a - |exp_a) : inter_shft_amt;
+      |                                                  ^
+                      /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:3:1: ... note: In file included from 'NN.sv'
+%Warning-WIDTHEXPAND: add_sub.sv:134:41: Operator COND expects 8 bits on the Conditional True, but Conditional True's CONST '5'h0' generates 5 bits.
+                                       : ... note: In instance 'NN.mm_layer2.add_c1'
+  134 |   assign inc_dec_exp_amt = a_is_subnorm ? 5'b0 : cout_check ? 5'b1 : shft_amt;
+      |                                         ^
+                      /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:3:1: ... note: In file included from 'NN.sv'
+%Warning-WIDTHEXPAND: add_sub.sv:134:61: Operator COND expects 8 bits on the Conditional True, but Conditional True's CONST '5'h1' generates 5 bits.
+                                       : ... note: In instance 'NN.mm_layer2.add_c1'
+  134 |   assign inc_dec_exp_amt = a_is_subnorm ? 5'b0 : cout_check ? 5'b1 : shft_amt;
+      |                                                             ^
+                      /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:3:1: ... note: In file included from 'NN.sv'
+%Warning-WIDTHTRUNC: add_sub.sv:134:26: Operator ASSIGNW expects 5 bits on the Assign RHS, but Assign RHS's COND generates 8 bits.
+                                      : ... note: In instance 'NN.mm_layer2.add_c1'
+  134 |   assign inc_dec_exp_amt = a_is_subnorm ? 5'b0 : cout_check ? 5'b1 : shft_amt;
+      |                          ^
+                     /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:3:1: ... note: In file included from 'NN.sv'
+%Warning-WIDTHEXPAND: add_sub.sv:140:41: Operator ADD expects 8 bits on the RHS, but RHS's VARREF 'inc_dec_exp_amt' generates 5 bits.
+                                       : ... note: In instance 'NN.mm_layer2.add_c1'
+  140 |   assign norm_exp = cout_check ? (exp_a + inc_dec_exp_amt + round_of) : 
+      |                                         ^
+                      /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:3:1: ... note: In file included from 'NN.sv'
+%Warning-WIDTHEXPAND: add_sub.sv:140:59: Operator ADD expects 8 bits on the RHS, but RHS's VARREF 'round_of' generates 1 bits.
+                                       : ... note: In instance 'NN.mm_layer2.add_c1'
+  140 |   assign norm_exp = cout_check ? (exp_a + inc_dec_exp_amt + round_of) : 
+      |                                                           ^
+                      /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:3:1: ... note: In file included from 'NN.sv'
+%Warning-WIDTHEXPAND: add_sub.sv:141:28: Operator SUB expects 8 bits on the RHS, but RHS's VARREF 'inc_dec_exp_amt' generates 5 bits.
+                                       : ... note: In instance 'NN.mm_layer2.add_c1'
+  141 |                     (exp_a - inc_dec_exp_amt + round_of);
+      |                            ^
+                      /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:3:1: ... note: In file included from 'NN.sv'
+%Warning-WIDTHEXPAND: add_sub.sv:141:46: Operator ADD expects 8 bits on the RHS, but RHS's VARREF 'round_of' generates 1 bits.
+                                       : ... note: In instance 'NN.mm_layer2.add_c1'
+  141 |                     (exp_a - inc_dec_exp_amt + round_of);
+      |                                              ^
+                      /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:3:1: ... note: In file included from 'NN.sv'
+%Warning-WIDTHEXPAND: add_sub.sv:145:47: Operator OR expects 8 bits on the LHS, but LHS's VARREF 'hd_bit_a' generates 1 bits.
+                                       : ... note: In instance 'NN.mm_layer2.add_c1'
+  145 |                        (norm_exp - ((hd_bit_a | hd_bit_b) & exp_shft_comp & !rounded_mant[23]));
+      |                                               ^
+                      /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:3:1: ... note: In file included from 'NN.sv'
+%Warning-WIDTHEXPAND: add_sub.sv:145:47: Operator OR expects 8 bits on the RHS, but RHS's VARREF 'hd_bit_b' generates 1 bits.
+                                       : ... note: In instance 'NN.mm_layer2.add_c1'
+  145 |                        (norm_exp - ((hd_bit_a | hd_bit_b) & exp_shft_comp & !rounded_mant[23]));
+      |                                               ^
+                      /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:3:1: ... note: In file included from 'NN.sv'
+%Warning-WIDTHEXPAND: add_sub.sv:145:59: Operator AND expects 8 bits on the RHS, but RHS's VARREF 'exp_shft_comp' generates 1 bits.
+                                       : ... note: In instance 'NN.mm_layer2.add_c1'
+  145 |                        (norm_exp - ((hd_bit_a | hd_bit_b) & exp_shft_comp & !rounded_mant[23]));
+      |                                                           ^
+                      /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:3:1: ... note: In file included from 'NN.sv'
+%Warning-WIDTHEXPAND: add_sub.sv:145:75: Operator AND expects 8 bits on the RHS, but RHS's LOGNOT generates 1 bits.
+                                       : ... note: In instance 'NN.mm_layer2.add_c1'
+  145 |                        (norm_exp - ((hd_bit_a | hd_bit_b) & exp_shft_comp & !rounded_mant[23]));
+      |                                                                           ^
+                      /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:3:1: ... note: In file included from 'NN.sv'
+%Warning-UNUSEDSIGNAL: /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:44:10: Signal is not used: 'out_valid_sig1'
+                                                                                                : ... note: In instance 'NN'
+   44 |     wire out_valid_sig1,out_valid_sig2,out_valid_sig3;
+      |          ^~~~~~~~~~~~~~
+%Warning-UNUSEDSIGNAL: /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:44:25: Signal is not used: 'out_valid_sig2'
+                                                                                                : ... note: In instance 'NN'
+   44 |     wire out_valid_sig1,out_valid_sig2,out_valid_sig3;
+      |                         ^~~~~~~~~~~~~~
+%Warning-UNUSEDSIGNAL: /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:44:40: Signal is not used: 'out_valid_sig3'
+                                                                                                : ... note: In instance 'NN'
+   44 |     wire out_valid_sig1,out_valid_sig2,out_valid_sig3;
+      |                                        ^~~~~~~~~~~~~~
+%Warning-UNUSEDSIGNAL: add_sub.sv:60:15: Bits of signal are not used: 'x_check_res'[6:5,2:1]
+                                       : ... note: In instance 'NN.mm_layer2.add_c1'
+   60 |   wire [9:0]  x_check_res, y_check_res;
+      |               ^~~~~~~~~~~
+                       /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:3:1: ... note: In file included from 'NN.sv'
+%Warning-UNUSEDSIGNAL: add_sub.sv:60:28: Bits of signal are not used: 'y_check_res'[6:5,2:1]
+                                       : ... note: In instance 'NN.mm_layer2.add_c1'
+   60 |   wire [9:0]  x_check_res, y_check_res;
+      |                            ^~~~~~~~~~~
+                       /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:3:1: ... note: In file included from 'NN.sv'
+%Warning-UNUSEDSIGNAL: multiplier.sv:21:33: Bits of signal are not used: 'check_a'[6:5,2:1]
+                                          : ... note: In instance 'NN.mm_layer2.mult12'
+   21 |   wire [9:0]                    check_a, check_b;
+      |                                 ^~~~~~~
+                       /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:4:1: ... note: In file included from 'NN.sv'
+%Warning-UNUSEDSIGNAL: multiplier.sv:21:42: Bits of signal are not used: 'check_b'[6:5,2:1]
+                                          : ... note: In instance 'NN.mm_layer2.mult12'
+   21 |   wire [9:0]                    check_a, check_b;
+      |                                          ^~~~~~~
+                       /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:4:1: ... note: In file included from 'NN.sv'
+%Warning-UNUSEDSIGNAL: multiplier.sv:30:33: Signal is not used: 'sign_oper1'
+                                          : ... note: In instance 'NN.mm_layer2.mult12'
+   30 |   wire                          sign_oper1, sign_oper2;
+      |                                 ^~~~~~~~~~
+                       /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:4:1: ... note: In file included from 'NN.sv'
+%Warning-UNUSEDSIGNAL: multiplier.sv:30:45: Signal is not used: 'sign_oper2'
+                                          : ... note: In instance 'NN.mm_layer2.mult12'
+   30 |   wire                          sign_oper1, sign_oper2;
+      |                                             ^~~~~~~~~~
+                       /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:4:1: ... note: In file included from 'NN.sv'
+%Warning-UNUSEDPARAM: divider.sv:18:80: Parameter is not used: 'options'
+                                      : ... note: In instance 'NN.sigmoid_out.div_inst2'
+   18 | module divider#( parameter exp_width = 8, parameter mant_width = 24, parameter options = 0) 
+      |                                                                                ^~~~~~~
+                      /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:5:1: ... note: In file included from 'NN.sv'
+%Warning-UNUSEDSIGNAL: divider.sv:53:14: Signal is not used: 'roundingModeOut'
+                                       : ... note: In instance 'NN.sigmoid_out.div_inst2'
+   53 |   wire [2:0] roundingModeOut;
+      |              ^~~~~~~~~~~~~~~
+                       /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:5:1: ... note: In file included from 'NN.sv'
+%Warning-UNUSEDSIGNAL: divider.sv:90:14: Signal is not used: 'dec_hi_mant_a'
+                                       : ... note: In instance 'NN.sigmoid_out.div_inst2'
+   90 |   wire [1:0] dec_hi_mant_a;
+      |              ^~~~~~~~~~~~~
+                       /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:5:1: ... note: In file included from 'NN.sv'
+%Warning-UNUSEDPARAM: fpu_lib.sv:309:46: Parameter is not used: 'OVERRIDE'
+                                       : ... note: In instance 'NN.sigmoid_out.div_inst2.mantx_z_ff'
+  309 | module rvdffe #( parameter WIDTH=1, SHORT=0, OVERRIDE=0 )
+      |                                              ^~~~~~~~
+                      /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:2:1: ... note: In file included from 'NN.sv'
+%Warning-UNUSEDSIGNAL: fpu_lib.sv:221:18: Bits of signal are not used: 'temp'[0]
+                                        : ... note: In instance 'NN.mm_layer2.add_c1.norm_shifter'
+  221 |  wire [mant-1:0] temp;
+      |                  ^~~~
+                       /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:2:1: ... note: In file included from 'NN.sv'
+%Warning-UNUSEDSIGNAL: fpu_lib.sv:537:28: Signal is not used: 'roundmode_min_mag'
+                                        : ... note: In instance 'NN.mm_layer2.mult12.round_exception'
+  537 |  wire roundmode_near_even, roundmode_min_mag, roundmode_min, roundmode_max, roundmode_max_mag, round_mag_up;
+      |                            ^~~~~~~~~~~~~~~~~
+                       /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:2:1: ... note: In file included from 'NN.sv'
+%Warning-UNUSEDSIGNAL: fpu_lib.sv:546:23: Signal is not used: 'is_zero'
+                                        : ... note: In instance 'NN.mm_layer2.mult12.round_exception'
+  546 |  wire is_NaN, is_inf, is_zero, sign_res, is_subnorm;
+      |                       ^~~~~~~
+                       /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:2:1: ... note: In file included from 'NN.sv'
+%Warning-UNUSEDSIGNAL: fpu_lib.sv:474:21: Bits of signal are not used: 'one_least_reverse_in'[0]
+                                        : ... note: In instance 'NN.mm_layer2.mult12.norm_a'
+  474 |   wire [in_width:0] one_least_reverse_in;
+      |                     ^~~~~~~~~~~~~~~~~~~~
+                       /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:2:1: ... note: In file included from 'NN.sv'
+%Warning-VARHIDDEN: fpu_lib.sv:513:17: Declaration of signal hides declaration in upper scope: 'a'
+                                     : ... note: In instance 'NN.mm_layer2.mult12'
+  513 |   input integer a;
+      |                 ^
+                    /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:2:1: ... note: In file included from 'NN.sv'
+                    multiplier.sv:5:46: ... Location of original declaration
+    5 |   input  wire [(exp_width + mant_width-1):0] a,  
+      |                                              ^
+%Warning-VARHIDDEN: fpu_lib.sv:350:18: Declaration of signal hides declaration in upper scope: 'clog2'
+                                     : ... note: In instance 'NN.sigmoid_out.div_inst2'
+  350 | function integer clog2;
+      |                  ^~~~~
+                    /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:2:1: ... note: In file included from 'NN.sv'
+                    divider.sv:34:18: ... Location of original declaration
+   34 | function integer clog2;
+      |                  ^~~~~
+%Warning-VARHIDDEN: fpu_lib.sv:351:17: Declaration of signal hides declaration in upper scope: 'a'
+                                     : ... note: In instance 'NN.sigmoid_out.div_inst2'
+  351 |   input integer a;
+      |                 ^
+                    /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:2:1: ... note: In file included from 'NN.sv'
+                    divider.sv:23:45: ... Location of original declaration
+   23 |   input wire [(exp_width + mant_width)-1:0] a,
+      |                                             ^
+%Warning-VARHIDDEN: fpu_lib.sv:512:18: Declaration of signal hides declaration in upper scope: 'clog2'
+                                     : ... note: In instance 'NN.sigmoid_out.div_inst2'
+  512 | function integer clog2;
+      |                  ^~~~~
+                    /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:2:1: ... note: In file included from 'NN.sv'
+                    divider.sv:34:18: ... Location of original declaration
+   34 | function integer clog2;
+      |                  ^~~~~
+%Warning-VARHIDDEN: fpu_lib.sv:513:17: Declaration of signal hides declaration in upper scope: 'a'
+                                     : ... note: In instance 'NN.sigmoid_out.div_inst2'
+  513 |   input integer a;
+      |                 ^
+                    /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:2:1: ... note: In file included from 'NN.sv'
+                    divider.sv:23:45: ... Location of original declaration
+   23 |   input wire [(exp_width + mant_width)-1:0] a,
+      |                                             ^
+%Warning-MULTIDRIVEN: sigmoid_v4.sv:30:8: Signal has multiple driving blocks with different clocking: 'NN.sigmoid_h1.div_inst1_in_valid'
+                      sigmoid_v4.sv:152:14: ... Location of first driving block
+  152 |              div_inst1_in_valid <= 0;
+      |              ^~~~~~~~~~~~~~~~~~
+                      /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:8:1: ... note: In file included from 'NN.sv'
+                      sigmoid_v4.sv:122:13: ... Location of other driving block
+  122 |             div_inst1_in_valid <= 1;
+      |             ^~~~~~~~~~~~~~~~~~
+%Warning-MULTIDRIVEN: sigmoid_v4.sv:30:28: Signal has multiple driving blocks with different clocking: 'NN.sigmoid_h1.div_inst2_in_valid'
+                      sigmoid_v4.sv:155:14: ... Location of first driving block
+  155 |              div_inst2_in_valid <= 0;
+      |              ^~~~~~~~~~~~~~~~~~
+                      /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:8:1: ... note: In file included from 'NN.sv'
+                      sigmoid_v4.sv:123:13: ... Location of other driving block
+  123 |             div_inst2_in_valid <= 1;
+      |             ^~~~~~~~~~~~~~~~~~
+%Warning-MULTIDRIVEN: sigmoid_v4.sv:30:8: Signal has multiple driving blocks with different clocking: 'NN.sigmoid_h2.div_inst1_in_valid'
+                      sigmoid_v4.sv:152:14: ... Location of first driving block
+  152 |              div_inst1_in_valid <= 0;
+      |              ^~~~~~~~~~~~~~~~~~
+                      /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:8:1: ... note: In file included from 'NN.sv'
+                      sigmoid_v4.sv:122:13: ... Location of other driving block
+  122 |             div_inst1_in_valid <= 1;
+      |             ^~~~~~~~~~~~~~~~~~
+%Warning-MULTIDRIVEN: sigmoid_v4.sv:30:28: Signal has multiple driving blocks with different clocking: 'NN.sigmoid_h2.div_inst2_in_valid'
+                      sigmoid_v4.sv:155:14: ... Location of first driving block
+  155 |              div_inst2_in_valid <= 0;
+      |              ^~~~~~~~~~~~~~~~~~
+                      /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:8:1: ... note: In file included from 'NN.sv'
+                      sigmoid_v4.sv:123:13: ... Location of other driving block
+  123 |             div_inst2_in_valid <= 1;
+      |             ^~~~~~~~~~~~~~~~~~
+%Warning-MULTIDRIVEN: sigmoid_v4.sv:30:8: Signal has multiple driving blocks with different clocking: 'NN.sigmoid_out.div_inst1_in_valid'
+                      sigmoid_v4.sv:152:14: ... Location of first driving block
+  152 |              div_inst1_in_valid <= 0;
+      |              ^~~~~~~~~~~~~~~~~~
+                      /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:8:1: ... note: In file included from 'NN.sv'
+                      sigmoid_v4.sv:122:13: ... Location of other driving block
+  122 |             div_inst1_in_valid <= 1;
+      |             ^~~~~~~~~~~~~~~~~~
+%Warning-MULTIDRIVEN: sigmoid_v4.sv:30:28: Signal has multiple driving blocks with different clocking: 'NN.sigmoid_out.div_inst2_in_valid'
+                      sigmoid_v4.sv:155:14: ... Location of first driving block
+  155 |              div_inst2_in_valid <= 0;
+      |              ^~~~~~~~~~~~~~~~~~
+                      /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv:8:1: ... note: In file included from 'NN.sv'
+                      sigmoid_v4.sv:123:13: ... Location of other driving block
+  123 |             div_inst2_in_valid <= 1;
+      |             ^~~~~~~~~~~~~~~~~~

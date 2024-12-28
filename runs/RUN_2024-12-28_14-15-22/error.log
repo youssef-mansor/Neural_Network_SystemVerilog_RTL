@@ -1,0 +1,14 @@
+Subprocess had a non-zero exit.
+Last 10 line(s):
+Storing AST representation for module `$abstract\matrix_multiply_2x2_2x1'.
+Successfully finished Verilog frontend.
+
+8. Executing Verilog-2005 frontend: /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/matrix_multiply_1x2_2x1.sv
+Parsing SystemVerilog input from `/home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/matrix_multiply_1x2_2x1.sv' to AST representation.
+Storing AST representation for module `$abstract\matrix_multiply_1x2_2x1'.
+Successfully finished Verilog frontend.
+
+9. Executing Verilog-2005 frontend: /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv
+fpu_lib.sv:18: ERROR: Re-definition of module `$abstract\special_check'!
+
+Full log file: 'runs/RUN_2024-12-28_14-15-22/05-yosys-jsonheader/yosys-jsonheader.log'

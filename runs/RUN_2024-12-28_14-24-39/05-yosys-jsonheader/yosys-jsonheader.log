@@ -1,0 +1,1150 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2024  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.46 (git sha1 e97731b9dda91fa5fa53ed87df7c34163ba59a41, clang++ 17.0.6 -fPIC -O3)
+Loaded SDC plugin
+
+1. Executing Verilog-2005 frontend: /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/runs/RUN_2024-12-28_14-24-39/tmp/358abbcee5404ec7834b8751d54ebe2b.bb.v
+Parsing SystemVerilog input from `/home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/runs/RUN_2024-12-28_14-24-39/tmp/358abbcee5404ec7834b8751d54ebe2b.bb.v' to AST representation.
+Generating RTLIL representation for module `\sky130_ef_sc_hd__decap_12'.
+Generating RTLIL representation for module `\sky130_ef_sc_hd__fill_12'.
+Generating RTLIL representation for module `\sky130_ef_sc_hd__fill_4'.
+Generating RTLIL representation for module `\sky130_ef_sc_hd__fill_8'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a2111o_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a2111o_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a2111o_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a2111oi_0'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a2111oi_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a2111oi_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a2111oi_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a211o_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a211o_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a211o_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a211oi_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a211oi_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a211oi_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a21bo_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a21bo_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a21bo_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a21boi_0'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a21boi_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a21boi_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a21boi_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a21o_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a21o_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a21o_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a21oi_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a21oi_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a21oi_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a221o_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a221o_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a221o_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a221oi_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a221oi_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a221oi_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a222oi_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a22o_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a22o_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a22o_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a22oi_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a22oi_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a22oi_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a2bb2o_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a2bb2o_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a2bb2o_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a2bb2oi_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a2bb2oi_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a2bb2oi_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a311o_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a311o_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a311o_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a311oi_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a311oi_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a311oi_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a31o_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a31o_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a31o_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a31oi_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a31oi_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a31oi_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a32o_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a32o_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a32o_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a32oi_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a32oi_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a32oi_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a41o_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a41o_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a41o_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a41oi_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a41oi_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a41oi_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__and2_0'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__and2_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__and2_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__and2_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__and2b_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__and2b_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__and2b_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__and3_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__and3_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__and3_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__and3b_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__and3b_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__and3b_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__and4_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__and4_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__and4_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__and4b_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__and4b_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__and4b_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__and4bb_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__and4bb_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__and4bb_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__buf_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__buf_12'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__buf_16'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__buf_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__buf_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__buf_6'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__buf_8'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__bufbuf_16'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__bufbuf_8'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__bufinv_16'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__bufinv_8'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__clkbuf_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__clkbuf_16'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__clkbuf_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__clkbuf_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__clkbuf_8'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__clkdlybuf4s15_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__clkdlybuf4s15_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__clkdlybuf4s18_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__clkdlybuf4s18_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__clkdlybuf4s25_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__clkdlybuf4s25_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__clkdlybuf4s50_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__clkdlybuf4s50_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__clkinv_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__clkinv_16'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__clkinv_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__clkinv_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__clkinv_8'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__clkinvlp_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__clkinvlp_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__conb_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__decap_12'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__decap_3'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__decap_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__decap_6'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__decap_8'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dfbbn_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dfbbn_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dfbbp_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dfrbp_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dfrbp_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dfrtn_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dfrtp_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dfrtp_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dfrtp_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dfsbp_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dfsbp_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dfstp_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dfstp_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dfstp_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dfxbp_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dfxbp_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dfxtp_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dfxtp_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dfxtp_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__diode_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlclkp_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlclkp_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlclkp_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlrbn_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlrbn_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlrbp_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlrbp_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlrtn_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlrtn_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlrtn_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlrtp_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlrtp_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlrtp_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlxbn_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlxbn_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlxbp_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlxtn_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlxtn_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlxtn_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlxtp_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlygate4sd1_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlygate4sd2_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlygate4sd3_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlymetal6s2s_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlymetal6s4s_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlymetal6s6s_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__ebufn_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__ebufn_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__ebufn_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__ebufn_8'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__edfxbp_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__edfxtp_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__einvn_0'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__einvn_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__einvn_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__einvn_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__einvn_8'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__einvp_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__einvp_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__einvp_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__einvp_8'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__fa_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__fa_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__fa_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__fah_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__fahcin_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__fahcon_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__fill_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__fill_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__fill_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__fill_8'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__ha_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__ha_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__ha_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__inv_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__inv_12'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__inv_16'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__inv_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__inv_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__inv_6'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__inv_8'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_bleeder_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_clkbufkapwr_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_clkbufkapwr_16'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_clkbufkapwr_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_clkbufkapwr_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_clkbufkapwr_8'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_clkinvkapwr_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_clkinvkapwr_16'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_clkinvkapwr_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_clkinvkapwr_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_clkinvkapwr_8'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_decapkapwr_12'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_decapkapwr_3'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_decapkapwr_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_decapkapwr_6'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_decapkapwr_8'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_inputiso0n_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_inputiso0p_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_inputiso1n_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_inputiso1p_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_inputisolatch_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_isobufsrc_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_isobufsrc_16'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_isobufsrc_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_isobufsrc_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_isobufsrc_8'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_isobufsrckapwr_16'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__macro_sparecell'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__maj3_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__maj3_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__maj3_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__mux2_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__mux2_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__mux2_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__mux2_8'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__mux2i_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__mux2i_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__mux2i_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__mux4_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__mux4_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__mux4_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nand2_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nand2_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nand2_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nand2_8'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nand2b_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nand2b_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nand2b_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nand3_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nand3_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nand3_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nand3b_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nand3b_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nand3b_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nand4_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nand4_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nand4_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nand4b_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nand4b_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nand4b_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nand4bb_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nand4bb_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nand4bb_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nor2_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nor2_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nor2_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nor2_8'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nor2b_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nor2b_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nor2b_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nor3_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nor3_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nor3_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nor3b_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nor3b_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nor3b_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nor4_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nor4_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nor4_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nor4b_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nor4b_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nor4b_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nor4bb_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nor4bb_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nor4bb_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o2111a_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o2111a_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o2111a_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o2111ai_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o2111ai_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o2111ai_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o211a_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o211a_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o211a_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o211ai_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o211ai_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o211ai_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o21a_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o21a_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o21a_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o21ai_0'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o21ai_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o21ai_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o21ai_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o21ba_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o21ba_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o21ba_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o21bai_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o21bai_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o21bai_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o221a_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o221a_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o221a_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o221ai_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o221ai_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o221ai_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o22a_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o22a_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o22a_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o22ai_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o22ai_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o22ai_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o2bb2a_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o2bb2a_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o2bb2a_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o2bb2ai_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o2bb2ai_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o2bb2ai_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o311a_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o311a_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o311a_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o311ai_0'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o311ai_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o311ai_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o311ai_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o31a_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o31a_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o31a_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o31ai_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o31ai_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o31ai_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o32a_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o32a_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o32a_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o32ai_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o32ai_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o32ai_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o41a_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o41a_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o41a_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o41ai_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o41ai_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o41ai_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__or2_0'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__or2_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__or2_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__or2_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__or2b_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__or2b_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__or2b_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__or3_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__or3_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__or3_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__or3b_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__or3b_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__or3b_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__or4_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__or4_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__or4_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__or4b_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__or4b_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__or4b_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__or4bb_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__or4bb_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__or4bb_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__probe_p_8'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__probec_p_8'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sdfbbn_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sdfbbn_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sdfbbp_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sdfrbp_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sdfrbp_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sdfrtn_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sdfrtp_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sdfrtp_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sdfrtp_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sdfsbp_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sdfsbp_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sdfstp_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sdfstp_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sdfstp_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sdfxbp_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sdfxbp_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sdfxtp_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sdfxtp_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sdfxtp_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sdlclkp_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sdlclkp_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sdlclkp_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sedfxbp_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sedfxbp_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sedfxtp_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sedfxtp_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sedfxtp_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__tap_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__tap_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__tapvgnd2_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__tapvgnd_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__tapvpwrvgnd_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__xnor2_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__xnor2_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__xnor2_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__xnor3_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__xnor3_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__xnor3_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__xor2_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__xor2_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__xor2_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__xor3_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__xor3_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__xor3_4'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: /home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv
+Parsing SystemVerilog input from `/home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/NN.sv' to AST representation.
+Storing AST representation for module `$abstract\special_check'.
+Storing AST representation for module `$abstract\mac_spec_check'.
+Storing AST representation for module `$abstract\rounding'.
+Storing AST representation for module `$abstract\leading_zero'.
+Storing AST representation for module `$abstract\leading_ones'.
+Storing AST representation for module `$abstract\left_shifter'.
+Storing AST representation for module `$abstract\right_shifter'.
+Storing AST representation for module `$abstract\int_excep'.
+Storing AST representation for module `$abstract\rvdff'.
+Storing AST representation for module `$abstract\rvdffe'.
+Storing AST representation for module `$abstract\exponent'.
+Storing AST representation for module `$abstract\invert'.
+Storing AST representation for module `$abstract\low_mask_hi_lo'.
+Storing AST representation for module `$abstract\low_mask_lo_hi'.
+Storing AST representation for module `$abstract\compress_by2'.
+Storing AST representation for module `$abstract\compress_by4'.
+Storing AST representation for module `$abstract\lead_zero_param'.
+Storing AST representation for module `$abstract\round_excep'.
+Storing AST representation for module `$abstract\add_sub'.
+Storing AST representation for module `$abstract\multiplier'.
+Storing AST representation for module `$abstract\divider'.
+Storing AST representation for module `$abstract\matrix_multiply_1x2_2x1'.
+Storing AST representation for module `$abstract\matrix_multiply_2x2_2x1'.
+Storing AST representation for module `$abstract\sigmoid_approx'.
+Storing AST representation for module `$abstract\NN'.
+Successfully finished Verilog frontend.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+
+4. Executing AST frontend in derive mode using pre-parsed AST for module `\NN'.
+Generating RTLIL representation for module `\NN'.
+
+4.1. Analyzing design hierarchy..
+Top module:  \NN
+Parameter \exp_width = 8
+Parameter \mant_width = 24
+
+4.2. Executing AST frontend in derive mode using pre-parsed AST for module `\sigmoid_approx'.
+Parameter \exp_width = 8
+Parameter \mant_width = 24
+Generating RTLIL representation for module `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\sigmoid_approx'.
+
+4.3. Executing AST frontend in derive mode using pre-parsed AST for module `\add_sub'.
+Generating RTLIL representation for module `\add_sub'.
+Parameter \exp_width = 8
+Parameter \mant_width = 24
+
+4.4. Executing AST frontend in derive mode using pre-parsed AST for module `\matrix_multiply_1x2_2x1'.
+Parameter \exp_width = 8
+Parameter \mant_width = 24
+Generating RTLIL representation for module `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\matrix_multiply_1x2_2x1'.
+Parameter \exp_width = 8
+Parameter \mant_width = 24
+Found cached RTLIL representation for module `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\sigmoid_approx'.
+Parameter \exp_width = 8
+Parameter \mant_width = 24
+Found cached RTLIL representation for module `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\sigmoid_approx'.
+Parameter \exp_width = 8
+Parameter \mant_width = 24
+
+4.5. Executing AST frontend in derive mode using pre-parsed AST for module `\matrix_multiply_2x2_2x1'.
+Parameter \exp_width = 8
+Parameter \mant_width = 24
+Generating RTLIL representation for module `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\matrix_multiply_2x2_2x1'.
+
+4.6. Analyzing design hierarchy..
+Top module:  \NN
+Used module:     $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\sigmoid_approx
+Used module:         \add_sub
+Used module:     $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\matrix_multiply_1x2_2x1
+Used module:     $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\matrix_multiply_2x2_2x1
+
+4.7. Executing AST frontend in derive mode using pre-parsed AST for module `\rounding'.
+Generating RTLIL representation for module `\rounding'.
+Parameter 1 (\mant) = 27
+
+4.8. Executing AST frontend in derive mode using pre-parsed AST for module `\left_shifter'.
+Parameter 1 (\mant) = 27
+Generating RTLIL representation for module `$paramod\left_shifter\mant=s32'00000000000000000000000000011011'.
+
+4.9. Executing AST frontend in derive mode using pre-parsed AST for module `\leading_zero'.
+Generating RTLIL representation for module `\leading_zero'.
+
+4.10. Executing AST frontend in derive mode using pre-parsed AST for module `\right_shifter'.
+Generating RTLIL representation for module `\right_shifter'.
+Parameter 1 (\exp_width) = 8
+Parameter 2 (\mant_width) = 24
+
+4.11. Executing AST frontend in derive mode using pre-parsed AST for module `\special_check'.
+Parameter 1 (\exp_width) = 8
+Parameter 2 (\mant_width) = 24
+Generating RTLIL representation for module `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\special_check'.
+Parameter 1 (\exp_width) = 8
+Parameter 2 (\mant_width) = 24
+Found cached RTLIL representation for module `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\special_check'.
+Parameter \exp_width = 8
+Parameter \mant_width = 24
+
+4.12. Executing AST frontend in derive mode using pre-parsed AST for module `\multiplier'.
+Parameter \exp_width = 8
+Parameter \mant_width = 24
+Generating RTLIL representation for module `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\multiplier'.
+Parameter \exp_width = 8
+Parameter \mant_width = 24
+Found cached RTLIL representation for module `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\multiplier'.
+Parameter \exp_width = 8
+Parameter \mant_width = 24
+Found cached RTLIL representation for module `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\multiplier'.
+Parameter \exp_width = 8
+Parameter \mant_width = 24
+Found cached RTLIL representation for module `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\multiplier'.
+Parameter \exp_width = 8
+Parameter \mant_width = 24
+Found cached RTLIL representation for module `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\multiplier'.
+Parameter \exp_width = 8
+Parameter \mant_width = 24
+Found cached RTLIL representation for module `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\multiplier'.
+Parameter \exp_width = 8
+Parameter \mant_width = 24
+
+4.13. Executing AST frontend in derive mode using pre-parsed AST for module `\divider'.
+Parameter \exp_width = 8
+Parameter \mant_width = 24
+Generating RTLIL representation for module `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\divider'.
+Parameter \exp_width = 8
+Parameter \mant_width = 24
+Found cached RTLIL representation for module `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\divider'.
+Parameter \exp_width = 8
+Parameter \mant_width = 24
+Found cached RTLIL representation for module `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\multiplier'.
+Parameter \exp_width = 8
+Parameter \mant_width = 24
+Found cached RTLIL representation for module `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\multiplier'.
+
+4.14. Analyzing design hierarchy..
+Top module:  \NN
+Used module:     $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\sigmoid_approx
+Used module:         $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\multiplier
+Used module:         \add_sub
+Used module:             \rounding
+Used module:             $paramod\left_shifter\mant=s32'00000000000000000000000000011011
+Used module:             \leading_zero
+Used module:             \right_shifter
+Used module:             $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\special_check
+Used module:         $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\divider
+Used module:     $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\matrix_multiply_1x2_2x1
+Used module:     $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\matrix_multiply_2x2_2x1
+Parameter 1 (\in_exp_width) = 8
+Parameter 2 (\in_mant_width) = 26
+Parameter 3 (\out_exp_width) = 8
+Parameter 4 (\out_mant_width) = 24
+Parameter 5 (\options) = 0
+
+4.15. Executing AST frontend in derive mode using pre-parsed AST for module `\round_excep'.
+Parameter 1 (\in_exp_width) = 8
+Parameter 2 (\in_mant_width) = 26
+Parameter 3 (\out_exp_width) = 8
+Parameter 4 (\out_mant_width) = 24
+Parameter 5 (\options) = 0
+Generating RTLIL representation for module `$paramod$c6e9536b7e6263460d855051cd973b955ec52664\round_excep'.
+Parameter 1 (\in_width) = 23
+Parameter 2 (\count_width) = 5
+
+4.16. Executing AST frontend in derive mode using pre-parsed AST for module `\lead_zero_param'.
+Parameter 1 (\in_width) = 23
+Parameter 2 (\count_width) = 5
+Generating RTLIL representation for module `$paramod$5bf976f106c35ed8ba6b089b3795de02364d6ce6\lead_zero_param'.
+Parameter 1 (\in_width) = 23
+Parameter 2 (\count_width) = 5
+Found cached RTLIL representation for module `$paramod$5bf976f106c35ed8ba6b089b3795de02364d6ce6\lead_zero_param'.
+Parameter 1 (\exp_width) = 8
+Parameter 2 (\mant_width) = 24
+Found cached RTLIL representation for module `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\special_check'.
+Parameter 1 (\exp_width) = 8
+Parameter 2 (\mant_width) = 24
+Found cached RTLIL representation for module `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\special_check'.
+Parameter 1 (\in_exp_width) = 8
+Parameter 2 (\in_mant_width) = 26
+Parameter 3 (\out_exp_width) = 8
+Parameter 4 (\out_mant_width) = 24
+Parameter 5 (\options) = 0
+Found cached RTLIL representation for module `$paramod$c6e9536b7e6263460d855051cd973b955ec52664\round_excep'.
+Parameter 1 (\WIDTH) = 26
+
+4.17. Executing AST frontend in derive mode using pre-parsed AST for module `\rvdffe'.
+Parameter 1 (\WIDTH) = 26
+Generating RTLIL representation for module `$paramod\rvdffe\WIDTH=s32'00000000000000000000000000011010'.
+Parameter 1 (\WIDTH) = 1
+
+4.18. Executing AST frontend in derive mode using pre-parsed AST for module `\rvdffe'.
+Parameter 1 (\WIDTH) = 1
+Generating RTLIL representation for module `$paramod\rvdffe\WIDTH=s32'00000000000000000000000000000001'.
+Parameter 1 (\WIDTH) = 26
+Found cached RTLIL representation for module `$paramod\rvdffe\WIDTH=s32'00000000000000000000000000011010'.
+Parameter 1 (\WIDTH) = 23
+
+4.19. Executing AST frontend in derive mode using pre-parsed AST for module `\rvdffe'.
+Parameter 1 (\WIDTH) = 23
+Generating RTLIL representation for module `$paramod\rvdffe\WIDTH=s32'00000000000000000000000000010111'.
+Parameter 1 (\WIDTH) = 3
+
+4.20. Executing AST frontend in derive mode using pre-parsed AST for module `\rvdffe'.
+Parameter 1 (\WIDTH) = 3
+Generating RTLIL representation for module `$paramod\rvdffe\WIDTH=s32'00000000000000000000000000000011'.
+Parameter 1 (\WIDTH) = 10
+
+4.21. Executing AST frontend in derive mode using pre-parsed AST for module `\rvdffe'.
+Parameter 1 (\WIDTH) = 10
+Generating RTLIL representation for module `$paramod\rvdffe\WIDTH=s32'00000000000000000000000000001010'.
+Parameter 1 (\WIDTH) = 1
+Found cached RTLIL representation for module `$paramod\rvdffe\WIDTH=s32'00000000000000000000000000000001'.
+Parameter 1 (\WIDTH) = 1
+Found cached RTLIL representation for module `$paramod\rvdffe\WIDTH=s32'00000000000000000000000000000001'.
+Parameter 1 (\WIDTH) = 1
+Found cached RTLIL representation for module `$paramod\rvdffe\WIDTH=s32'00000000000000000000000000000001'.
+Parameter 1 (\WIDTH) = 1
+Found cached RTLIL representation for module `$paramod\rvdffe\WIDTH=s32'00000000000000000000000000000001'.
+Parameter 1 (\WIDTH) = 1
+Found cached RTLIL representation for module `$paramod\rvdffe\WIDTH=s32'00000000000000000000000000000001'.
+Parameter 1 (\WIDTH) = 5
+
+4.22. Executing AST frontend in derive mode using pre-parsed AST for module `\rvdffe'.
+Parameter 1 (\WIDTH) = 5
+Generating RTLIL representation for module `$paramod\rvdffe\WIDTH=s32'00000000000000000000000000000101'.
+Parameter 1 (\exp_width) = 8
+Parameter 2 (\mant_width) = 24
+
+4.23. Executing AST frontend in derive mode using pre-parsed AST for module `\mac_spec_check'.
+Parameter 1 (\exp_width) = 8
+Parameter 2 (\mant_width) = 24
+Generating RTLIL representation for module `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\mac_spec_check'.
+Parameter 1 (\exp_width) = 8
+Parameter 2 (\mant_width) = 24
+Found cached RTLIL representation for module `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\mac_spec_check'.
+Parameter 1 (\exp_width) = 8
+Parameter 2 (\mant_width) = 24
+
+4.24. Executing AST frontend in derive mode using pre-parsed AST for module `\exponent'.
+Parameter 1 (\exp_width) = 8
+Parameter 2 (\mant_width) = 24
+Generating RTLIL representation for module `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\exponent'.
+Parameter 1 (\exp_width) = 8
+Parameter 2 (\mant_width) = 24
+Found cached RTLIL representation for module `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\exponent'.
+
+4.25. Analyzing design hierarchy..
+Top module:  \NN
+Used module:     $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\sigmoid_approx
+Used module:         $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\multiplier
+Used module:             $paramod$c6e9536b7e6263460d855051cd973b955ec52664\round_excep
+Used module:             $paramod$5bf976f106c35ed8ba6b089b3795de02364d6ce6\lead_zero_param
+Used module:             $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\special_check
+Used module:         \add_sub
+Used module:             \rounding
+Used module:             $paramod\left_shifter\mant=s32'00000000000000000000000000011011
+Used module:             \leading_zero
+Used module:             \right_shifter
+Used module:         $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\divider
+Used module:             $paramod\rvdffe\WIDTH=s32'00000000000000000000000000011010
+Used module:             $paramod\rvdffe\WIDTH=s32'00000000000000000000000000000001
+Used module:             $paramod\rvdffe\WIDTH=s32'00000000000000000000000000010111
+Used module:             $paramod\rvdffe\WIDTH=s32'00000000000000000000000000000011
+Used module:             $paramod\rvdffe\WIDTH=s32'00000000000000000000000000001010
+Used module:             $paramod\rvdffe\WIDTH=s32'00000000000000000000000000000101
+Used module:             $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\mac_spec_check
+Used module:             $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\exponent
+Used module:     $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\matrix_multiply_1x2_2x1
+Used module:     $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\matrix_multiply_2x2_2x1
+Parameter 1 (\in_width) = 9
+Parameter 2 (\top_bound) = 105
+Parameter 3 (\bottom_bound) = 130
+
+4.26. Executing AST frontend in derive mode using pre-parsed AST for module `\low_mask_lo_hi'.
+Parameter 1 (\in_width) = 9
+Parameter 2 (\top_bound) = 105
+Parameter 3 (\bottom_bound) = 130
+Generating RTLIL representation for module `$paramod$11733d16b27ca02259298891e6aef19e53efe2d0\low_mask_lo_hi'.
+Parameter 1 (\exp_width) = 8
+Parameter 2 (\mant_width) = 24
+Found cached RTLIL representation for module `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\mac_spec_check'.
+Reprocessing module $paramod$c6e9536b7e6263460d855051cd973b955ec52664\round_excep because instantiated module $paramod$11733d16b27ca02259298891e6aef19e53efe2d0\low_mask_lo_hi has become available.
+Generating RTLIL representation for module `$paramod$c6e9536b7e6263460d855051cd973b955ec52664\round_excep'.
+Parameter 1 (\WIDTH) = 26
+
+4.27. Executing AST frontend in derive mode using pre-parsed AST for module `\rvdff'.
+Parameter 1 (\WIDTH) = 26
+Generating RTLIL representation for module `$paramod\rvdff\WIDTH=s32'00000000000000000000000000011010'.
+Parameter 1 (\width) = 23
+
+4.28. Executing AST frontend in derive mode using pre-parsed AST for module `\invert'.
+Parameter 1 (\width) = 23
+Generating RTLIL representation for module `$paramod\invert\width=s32'00000000000000000000000000010111'.
+Parameter 1 (\WIDTH) = 1
+
+4.29. Executing AST frontend in derive mode using pre-parsed AST for module `\rvdff'.
+Parameter 1 (\WIDTH) = 1
+Generating RTLIL representation for module `$paramod\rvdff\WIDTH=s32'00000000000000000000000000000001'.
+Parameter 1 (\WIDTH) = 23
+
+4.30. Executing AST frontend in derive mode using pre-parsed AST for module `\rvdff'.
+Parameter 1 (\WIDTH) = 23
+Generating RTLIL representation for module `$paramod\rvdff\WIDTH=s32'00000000000000000000000000010111'.
+Parameter 1 (\WIDTH) = 3
+
+4.31. Executing AST frontend in derive mode using pre-parsed AST for module `\rvdff'.
+Parameter 1 (\WIDTH) = 3
+Generating RTLIL representation for module `$paramod\rvdff\WIDTH=s32'00000000000000000000000000000011'.
+Parameter 1 (\WIDTH) = 10
+
+4.32. Executing AST frontend in derive mode using pre-parsed AST for module `\rvdff'.
+Parameter 1 (\WIDTH) = 10
+Generating RTLIL representation for module `$paramod\rvdff\WIDTH=s32'00000000000000000000000000001010'.
+Parameter 1 (\WIDTH) = 5
+
+4.33. Executing AST frontend in derive mode using pre-parsed AST for module `\rvdff'.
+Parameter 1 (\WIDTH) = 5
+Generating RTLIL representation for module `$paramod\rvdff\WIDTH=s32'00000000000000000000000000000101'.
+Parameter 1 (\in_width) = 23
+Parameter 2 (\count_width) = 5
+Found cached RTLIL representation for module `$paramod$5bf976f106c35ed8ba6b089b3795de02364d6ce6\lead_zero_param'.
+
+4.34. Analyzing design hierarchy..
+Top module:  \NN
+Used module:     $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\sigmoid_approx
+Used module:         $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\multiplier
+Used module:             $paramod$c6e9536b7e6263460d855051cd973b955ec52664\round_excep
+Used module:             $paramod$5bf976f106c35ed8ba6b089b3795de02364d6ce6\lead_zero_param
+Used module:                 $paramod\invert\width=s32'00000000000000000000000000010111
+Used module:             $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\special_check
+Used module:         \add_sub
+Used module:             \rounding
+Used module:             $paramod\left_shifter\mant=s32'00000000000000000000000000011011
+Used module:             \leading_zero
+Used module:             \right_shifter
+Used module:         $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\divider
+Used module:             $paramod\rvdffe\WIDTH=s32'00000000000000000000000000011010
+Used module:                 $paramod\rvdff\WIDTH=s32'00000000000000000000000000011010
+Used module:             $paramod\rvdffe\WIDTH=s32'00000000000000000000000000000001
+Used module:                 $paramod\rvdff\WIDTH=s32'00000000000000000000000000000001
+Used module:             $paramod\rvdffe\WIDTH=s32'00000000000000000000000000010111
+Used module:                 $paramod\rvdff\WIDTH=s32'00000000000000000000000000010111
+Used module:             $paramod\rvdffe\WIDTH=s32'00000000000000000000000000000011
+Used module:                 $paramod\rvdff\WIDTH=s32'00000000000000000000000000000011
+Used module:             $paramod\rvdffe\WIDTH=s32'00000000000000000000000000001010
+Used module:                 $paramod\rvdff\WIDTH=s32'00000000000000000000000000001010
+Used module:             $paramod\rvdffe\WIDTH=s32'00000000000000000000000000000101
+Used module:                 $paramod\rvdff\WIDTH=s32'00000000000000000000000000000101
+Used module:             $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\mac_spec_check
+Used module:             $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\exponent
+Used module:     $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\matrix_multiply_1x2_2x1
+Used module:     $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\matrix_multiply_2x2_2x1
+Parameter 1 (\in_width) = 9
+Parameter 2 (\top_bound) = 105
+Parameter 3 (\bottom_bound) = 130
+Found cached RTLIL representation for module `$paramod$11733d16b27ca02259298891e6aef19e53efe2d0\low_mask_lo_hi'.
+Parameter 1 (\exp_width) = 8
+Parameter 2 (\mant_width) = 24
+Found cached RTLIL representation for module `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\mac_spec_check'.
+
+4.35. Analyzing design hierarchy..
+Top module:  \NN
+Used module:     $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\sigmoid_approx
+Used module:         $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\multiplier
+Used module:             $paramod$c6e9536b7e6263460d855051cd973b955ec52664\round_excep
+Used module:                 $paramod$11733d16b27ca02259298891e6aef19e53efe2d0\low_mask_lo_hi
+Used module:                 $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\mac_spec_check
+Used module:             $paramod$5bf976f106c35ed8ba6b089b3795de02364d6ce6\lead_zero_param
+Used module:                 $paramod\invert\width=s32'00000000000000000000000000010111
+Used module:             $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\special_check
+Used module:         \add_sub
+Used module:             \rounding
+Used module:             $paramod\left_shifter\mant=s32'00000000000000000000000000011011
+Used module:             \leading_zero
+Used module:             \right_shifter
+Used module:         $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\divider
+Used module:             $paramod\rvdffe\WIDTH=s32'00000000000000000000000000011010
+Used module:                 $paramod\rvdff\WIDTH=s32'00000000000000000000000000011010
+Used module:             $paramod\rvdffe\WIDTH=s32'00000000000000000000000000000001
+Used module:                 $paramod\rvdff\WIDTH=s32'00000000000000000000000000000001
+Used module:             $paramod\rvdffe\WIDTH=s32'00000000000000000000000000010111
+Used module:                 $paramod\rvdff\WIDTH=s32'00000000000000000000000000010111
+Used module:             $paramod\rvdffe\WIDTH=s32'00000000000000000000000000000011
+Used module:                 $paramod\rvdff\WIDTH=s32'00000000000000000000000000000011
+Used module:             $paramod\rvdffe\WIDTH=s32'00000000000000000000000000001010
+Used module:                 $paramod\rvdff\WIDTH=s32'00000000000000000000000000001010
+Used module:             $paramod\rvdffe\WIDTH=s32'00000000000000000000000000000101
+Used module:                 $paramod\rvdff\WIDTH=s32'00000000000000000000000000000101
+Used module:             $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\exponent
+Used module:     $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\matrix_multiply_1x2_2x1
+Used module:     $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\matrix_multiply_2x2_2x1
+Parameter 1 (\width) = 25
+
+4.36. Executing AST frontend in derive mode using pre-parsed AST for module `\invert'.
+Parameter 1 (\width) = 25
+Generating RTLIL representation for module `$paramod\invert\width=s32'00000000000000000000000000011001'.
+
+4.37. Analyzing design hierarchy..
+Top module:  \NN
+Used module:     $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\sigmoid_approx
+Used module:         $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\multiplier
+Used module:             $paramod$c6e9536b7e6263460d855051cd973b955ec52664\round_excep
+Used module:                 $paramod$11733d16b27ca02259298891e6aef19e53efe2d0\low_mask_lo_hi
+Used module:                     $paramod\invert\width=s32'00000000000000000000000000011001
+Used module:                 $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\mac_spec_check
+Used module:             $paramod$5bf976f106c35ed8ba6b089b3795de02364d6ce6\lead_zero_param
+Used module:                 $paramod\invert\width=s32'00000000000000000000000000010111
+Used module:             $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\special_check
+Used module:         \add_sub
+Used module:             \rounding
+Used module:             $paramod\left_shifter\mant=s32'00000000000000000000000000011011
+Used module:             \leading_zero
+Used module:             \right_shifter
+Used module:         $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\divider
+Used module:             $paramod\rvdffe\WIDTH=s32'00000000000000000000000000011010
+Used module:                 $paramod\rvdff\WIDTH=s32'00000000000000000000000000011010
+Used module:             $paramod\rvdffe\WIDTH=s32'00000000000000000000000000000001
+Used module:                 $paramod\rvdff\WIDTH=s32'00000000000000000000000000000001
+Used module:             $paramod\rvdffe\WIDTH=s32'00000000000000000000000000010111
+Used module:                 $paramod\rvdff\WIDTH=s32'00000000000000000000000000010111
+Used module:             $paramod\rvdffe\WIDTH=s32'00000000000000000000000000000011
+Used module:                 $paramod\rvdff\WIDTH=s32'00000000000000000000000000000011
+Used module:             $paramod\rvdffe\WIDTH=s32'00000000000000000000000000001010
+Used module:                 $paramod\rvdff\WIDTH=s32'00000000000000000000000000001010
+Used module:             $paramod\rvdffe\WIDTH=s32'00000000000000000000000000000101
+Used module:                 $paramod\rvdff\WIDTH=s32'00000000000000000000000000000101
+Used module:             $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\exponent
+Used module:     $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\matrix_multiply_1x2_2x1
+Used module:     $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\matrix_multiply_2x2_2x1
+
+4.38. Analyzing design hierarchy..
+Top module:  \NN
+Used module:     $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\sigmoid_approx
+Used module:         $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\multiplier
+Used module:             $paramod$c6e9536b7e6263460d855051cd973b955ec52664\round_excep
+Used module:                 $paramod$11733d16b27ca02259298891e6aef19e53efe2d0\low_mask_lo_hi
+Used module:                     $paramod\invert\width=s32'00000000000000000000000000011001
+Used module:                 $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\mac_spec_check
+Used module:             $paramod$5bf976f106c35ed8ba6b089b3795de02364d6ce6\lead_zero_param
+Used module:                 $paramod\invert\width=s32'00000000000000000000000000010111
+Used module:             $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\special_check
+Used module:         \add_sub
+Used module:             \rounding
+Used module:             $paramod\left_shifter\mant=s32'00000000000000000000000000011011
+Used module:             \leading_zero
+Used module:             \right_shifter
+Used module:         $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\divider
+Used module:             $paramod\rvdffe\WIDTH=s32'00000000000000000000000000011010
+Used module:                 $paramod\rvdff\WIDTH=s32'00000000000000000000000000011010
+Used module:             $paramod\rvdffe\WIDTH=s32'00000000000000000000000000000001
+Used module:                 $paramod\rvdff\WIDTH=s32'00000000000000000000000000000001
+Used module:             $paramod\rvdffe\WIDTH=s32'00000000000000000000000000010111
+Used module:                 $paramod\rvdff\WIDTH=s32'00000000000000000000000000010111
+Used module:             $paramod\rvdffe\WIDTH=s32'00000000000000000000000000000011
+Used module:                 $paramod\rvdff\WIDTH=s32'00000000000000000000000000000011
+Used module:             $paramod\rvdffe\WIDTH=s32'00000000000000000000000000001010
+Used module:                 $paramod\rvdff\WIDTH=s32'00000000000000000000000000001010
+Used module:             $paramod\rvdffe\WIDTH=s32'00000000000000000000000000000101
+Used module:                 $paramod\rvdff\WIDTH=s32'00000000000000000000000000000101
+Used module:             $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\exponent
+Used module:     $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\matrix_multiply_1x2_2x1
+Used module:     $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\matrix_multiply_2x2_2x1
+Removing unused module `$abstract\NN'.
+Removing unused module `$abstract\sigmoid_approx'.
+Removing unused module `$abstract\matrix_multiply_2x2_2x1'.
+Removing unused module `$abstract\matrix_multiply_1x2_2x1'.
+Removing unused module `$abstract\divider'.
+Removing unused module `$abstract\multiplier'.
+Removing unused module `$abstract\add_sub'.
+Removing unused module `$abstract\round_excep'.
+Removing unused module `$abstract\lead_zero_param'.
+Removing unused module `$abstract\compress_by4'.
+Removing unused module `$abstract\compress_by2'.
+Removing unused module `$abstract\low_mask_lo_hi'.
+Removing unused module `$abstract\low_mask_hi_lo'.
+Removing unused module `$abstract\invert'.
+Removing unused module `$abstract\exponent'.
+Removing unused module `$abstract\rvdffe'.
+Removing unused module `$abstract\rvdff'.
+Removing unused module `$abstract\int_excep'.
+Removing unused module `$abstract\right_shifter'.
+Removing unused module `$abstract\left_shifter'.
+Removing unused module `$abstract\leading_ones'.
+Removing unused module `$abstract\leading_zero'.
+Removing unused module `$abstract\rounding'.
+Removing unused module `$abstract\mac_spec_check'.
+Removing unused module `$abstract\special_check'.
+Removed 25 unused modules.
+Mapping positional arguments of cell $paramod$c6e9536b7e6263460d855051cd973b955ec52664\round_excep.genblk1.genblk1.lowmask_roundmask ($paramod$11733d16b27ca02259298891e6aef19e53efe2d0\low_mask_lo_hi).
+Mapping positional arguments of cell $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\exponent.countLeadingZeros ($paramod$5bf976f106c35ed8ba6b089b3795de02364d6ce6\lead_zero_param).
+Mapping positional arguments of cell $paramod$5bf976f106c35ed8ba6b089b3795de02364d6ce6\lead_zero_param.reverse_num ($paramod\invert\width=s32'00000000000000000000000000010111).
+Mapping positional arguments of cell $paramod$11733d16b27ca02259298891e6aef19e53efe2d0\low_mask_lo_hi.reverse_lo ($paramod\invert\width=s32'00000000000000000000000000011001).
+Mapping positional arguments of cell $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\multiplier.norm_b ($paramod$5bf976f106c35ed8ba6b089b3795de02364d6ce6\lead_zero_param).
+Mapping positional arguments of cell $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\multiplier.norm_a ($paramod$5bf976f106c35ed8ba6b089b3795de02364d6ce6\lead_zero_param).
+Renaming module NN to NN.
+
+5. Executing PROC pass (convert processes to netlists).
+
+5.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+5.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$sigmoid_v4.sv:146$14 in module $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\sigmoid_approx.
+Marked 3 switch rules as full_case in process $proc$sigmoid_v4.sv:111$11 in module $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\sigmoid_approx.
+Marked 1 switch rules as full_case in process $proc$fpu_lib.sv:299$1017 in module $paramod\rvdff\WIDTH=s32'00000000000000000000000000001010.
+Marked 1 switch rules as full_case in process $proc$fpu_lib.sv:299$1015 in module $paramod\rvdff\WIDTH=s32'00000000000000000000000000000011.
+Marked 1 switch rules as full_case in process $proc$fpu_lib.sv:299$1013 in module $paramod\rvdff\WIDTH=s32'00000000000000000000000000010111.
+Marked 1 switch rules as full_case in process $proc$fpu_lib.sv:299$1011 in module $paramod\rvdff\WIDTH=s32'00000000000000000000000000000001.
+Marked 1 switch rules as full_case in process $proc$fpu_lib.sv:299$1009 in module $paramod\rvdff\WIDTH=s32'00000000000000000000000000011010.
+Marked 1 switch rules as full_case in process $proc$fpu_lib.sv:299$1019 in module $paramod\rvdff\WIDTH=s32'00000000000000000000000000000101.
+Removed a total of 0 dead cases.
+
+5.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 6 redundant assignments.
+Promoted 0 assignments to connections.
+
+5.4. Executing PROC_INIT pass (extract init attributes).
+
+5.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_l in `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\sigmoid_approx.$proc$sigmoid_v4.sv:146$14'.
+Found async reset \rst_l in `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\sigmoid_approx.$proc$sigmoid_v4.sv:111$11'.
+Found async reset \rst_l in `$paramod\rvdff\WIDTH=s32'00000000000000000000000000001010.$proc$fpu_lib.sv:299$1017'.
+Found async reset \rst_l in `$paramod\rvdff\WIDTH=s32'00000000000000000000000000000011.$proc$fpu_lib.sv:299$1015'.
+Found async reset \rst_l in `$paramod\rvdff\WIDTH=s32'00000000000000000000000000010111.$proc$fpu_lib.sv:299$1013'.
+Found async reset \rst_l in `$paramod\rvdff\WIDTH=s32'00000000000000000000000000000001.$proc$fpu_lib.sv:299$1011'.
+Found async reset \rst_l in `$paramod\rvdff\WIDTH=s32'00000000000000000000000000011010.$proc$fpu_lib.sv:299$1009'.
+Found async reset \rst_l in `$paramod\rvdff\WIDTH=s32'00000000000000000000000000000101.$proc$fpu_lib.sv:299$1019'.
+
+5.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~7 debug messages>
+
+5.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\sigmoid_approx.$proc$sigmoid_v4.sv:146$14'.
+     1/2: $1\div_inst2_in_valid[0:0]
+     2/2: $1\div_inst1_in_valid[0:0]
+Creating decoders for process `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\sigmoid_approx.$proc$sigmoid_v4.sv:111$11'.
+     1/7: $0\in_x_reg[31:0]
+     2/7: $0\div_inst2_in_valid[0:0]
+     3/7: $0\div_inst1_in_valid[0:0]
+     4/7: $0\div_inst2_valid_reg[0:0]
+     5/7: $0\div_inst1_valid_reg[0:0]
+     6/7: $0\x_div_one_plus_x_reg[31:0]
+     7/7: $0\x_div_one_minus_x_reg[31:0]
+Creating decoders for process `$paramod\rvdff\WIDTH=s32'00000000000000000000000000001010.$proc$fpu_lib.sv:299$1017'.
+     1/1: $0\dout[9:0]
+Creating decoders for process `$paramod\rvdff\WIDTH=s32'00000000000000000000000000000011.$proc$fpu_lib.sv:299$1015'.
+     1/1: $0\dout[2:0]
+Creating decoders for process `$paramod\rvdff\WIDTH=s32'00000000000000000000000000010111.$proc$fpu_lib.sv:299$1013'.
+     1/1: $0\dout[22:0]
+Creating decoders for process `$paramod\rvdff\WIDTH=s32'00000000000000000000000000000001.$proc$fpu_lib.sv:299$1011'.
+     1/1: $0\dout[0:0]
+Creating decoders for process `$paramod\rvdff\WIDTH=s32'00000000000000000000000000011010.$proc$fpu_lib.sv:299$1009'.
+     1/1: $0\dout[25:0]
+Creating decoders for process `$paramod\rvdff\WIDTH=s32'00000000000000000000000000000101.$proc$fpu_lib.sv:299$1019'.
+     1/1: $0\dout[4:0]
+
+5.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+5.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\sigmoid_approx.\div_inst1_in_valid' using process `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\sigmoid_approx.$proc$sigmoid_v4.sv:146$14'.
+  created $adff cell `$procdff$1057' with negative edge clock and positive level reset.
+Creating register for signal `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\sigmoid_approx.\div_inst2_in_valid' using process `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\sigmoid_approx.$proc$sigmoid_v4.sv:146$14'.
+  created $adff cell `$procdff$1062' with negative edge clock and positive level reset.
+Creating register for signal `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\sigmoid_approx.\x_div_one_minus_x_reg' using process `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\sigmoid_approx.$proc$sigmoid_v4.sv:111$11'.
+  created $adff cell `$procdff$1067' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\sigmoid_approx.\x_div_one_plus_x_reg' using process `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\sigmoid_approx.$proc$sigmoid_v4.sv:111$11'.
+  created $adff cell `$procdff$1072' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\sigmoid_approx.\div_inst1_valid_reg' using process `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\sigmoid_approx.$proc$sigmoid_v4.sv:111$11'.
+  created $adff cell `$procdff$1077' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\sigmoid_approx.\div_inst2_valid_reg' using process `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\sigmoid_approx.$proc$sigmoid_v4.sv:111$11'.
+  created $adff cell `$procdff$1082' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\sigmoid_approx.\div_inst1_in_valid' using process `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\sigmoid_approx.$proc$sigmoid_v4.sv:111$11'.
+  created $adff cell `$procdff$1087' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\sigmoid_approx.\div_inst2_in_valid' using process `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\sigmoid_approx.$proc$sigmoid_v4.sv:111$11'.
+  created $adff cell `$procdff$1092' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\sigmoid_approx.\in_x_reg' using process `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\sigmoid_approx.$proc$sigmoid_v4.sv:111$11'.
+  created $adff cell `$procdff$1097' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\rvdff\WIDTH=s32'00000000000000000000000000001010.\dout' using process `$paramod\rvdff\WIDTH=s32'00000000000000000000000000001010.$proc$fpu_lib.sv:299$1017'.
+  created $adff cell `$procdff$1102' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\rvdff\WIDTH=s32'00000000000000000000000000000011.\dout' using process `$paramod\rvdff\WIDTH=s32'00000000000000000000000000000011.$proc$fpu_lib.sv:299$1015'.
+  created $adff cell `$procdff$1107' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\rvdff\WIDTH=s32'00000000000000000000000000010111.\dout' using process `$paramod\rvdff\WIDTH=s32'00000000000000000000000000010111.$proc$fpu_lib.sv:299$1013'.
+  created $adff cell `$procdff$1112' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\rvdff\WIDTH=s32'00000000000000000000000000000001.\dout' using process `$paramod\rvdff\WIDTH=s32'00000000000000000000000000000001.$proc$fpu_lib.sv:299$1011'.
+  created $adff cell `$procdff$1117' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\rvdff\WIDTH=s32'00000000000000000000000000011010.\dout' using process `$paramod\rvdff\WIDTH=s32'00000000000000000000000000011010.$proc$fpu_lib.sv:299$1009'.
+  created $adff cell `$procdff$1122' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\rvdff\WIDTH=s32'00000000000000000000000000000101.\dout' using process `$paramod\rvdff\WIDTH=s32'00000000000000000000000000000101.$proc$fpu_lib.sv:299$1019'.
+  created $adff cell `$procdff$1127' with positive edge clock and positive level reset.
+
+5.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+5.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 2 empty switches in `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\sigmoid_approx.$proc$sigmoid_v4.sv:146$14'.
+Removing empty process `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\sigmoid_approx.$proc$sigmoid_v4.sv:146$14'.
+Found and cleaned up 5 empty switches in `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\sigmoid_approx.$proc$sigmoid_v4.sv:111$11'.
+Removing empty process `$paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\sigmoid_approx.$proc$sigmoid_v4.sv:111$11'.
+Removing empty process `$paramod\rvdff\WIDTH=s32'00000000000000000000000000001010.$proc$fpu_lib.sv:299$1017'.
+Removing empty process `$paramod\rvdff\WIDTH=s32'00000000000000000000000000000011.$proc$fpu_lib.sv:299$1015'.
+Removing empty process `$paramod\rvdff\WIDTH=s32'00000000000000000000000000010111.$proc$fpu_lib.sv:299$1013'.
+Removing empty process `$paramod\rvdff\WIDTH=s32'00000000000000000000000000000001.$proc$fpu_lib.sv:299$1011'.
+Removing empty process `$paramod\rvdff\WIDTH=s32'00000000000000000000000000011010.$proc$fpu_lib.sv:299$1009'.
+Removing empty process `$paramod\rvdff\WIDTH=s32'00000000000000000000000000000101.$proc$fpu_lib.sv:299$1019'.
+Cleaned up 7 empty switches.
+
+5.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module NN.
+Optimizing module $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\matrix_multiply_2x2_2x1.
+Optimizing module $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\matrix_multiply_1x2_2x1.
+Optimizing module add_sub.
+<suppressed ~7 debug messages>
+Optimizing module $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\sigmoid_approx.
+<suppressed ~18 debug messages>
+Optimizing module rounding.
+<suppressed ~4 debug messages>
+Optimizing module $paramod\invert\width=s32'00000000000000000000000000011001.
+Optimizing module $paramod\rvdff\WIDTH=s32'00000000000000000000000000001010.
+<suppressed ~3 debug messages>
+Optimizing module $paramod\rvdff\WIDTH=s32'00000000000000000000000000000011.
+<suppressed ~3 debug messages>
+Optimizing module $paramod\rvdff\WIDTH=s32'00000000000000000000000000010111.
+<suppressed ~3 debug messages>
+Optimizing module $paramod\rvdff\WIDTH=s32'00000000000000000000000000000001.
+<suppressed ~3 debug messages>
+Optimizing module $paramod\invert\width=s32'00000000000000000000000000010111.
+Optimizing module $paramod\rvdff\WIDTH=s32'00000000000000000000000000011010.
+<suppressed ~3 debug messages>
+Optimizing module $paramod$c6e9536b7e6263460d855051cd973b955ec52664\round_excep.
+<suppressed ~15 debug messages>
+Optimizing module $paramod\rvdff\WIDTH=s32'00000000000000000000000000000101.
+<suppressed ~3 debug messages>
+Optimizing module $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\exponent.
+<suppressed ~5 debug messages>
+Optimizing module $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\mac_spec_check.
+<suppressed ~3 debug messages>
+Optimizing module $paramod\rvdffe\WIDTH=s32'00000000000000000000000000000101.
+Optimizing module $paramod\rvdffe\WIDTH=s32'00000000000000000000000000001010.
+Optimizing module $paramod\rvdffe\WIDTH=s32'00000000000000000000000000000011.
+Optimizing module $paramod\rvdffe\WIDTH=s32'00000000000000000000000000010111.
+Optimizing module $paramod\rvdffe\WIDTH=s32'00000000000000000000000000000001.
+Optimizing module $paramod\rvdffe\WIDTH=s32'00000000000000000000000000011010.
+Optimizing module $paramod$5bf976f106c35ed8ba6b089b3795de02364d6ce6\lead_zero_param.
+<suppressed ~1 debug messages>
+Optimizing module $paramod$11733d16b27ca02259298891e6aef19e53efe2d0\low_mask_lo_hi.
+<suppressed ~1 debug messages>
+Optimizing module $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\divider.
+<suppressed ~11 debug messages>
+Optimizing module $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\multiplier.
+<suppressed ~14 debug messages>
+Optimizing module $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\special_check.
+<suppressed ~5 debug messages>
+Optimizing module right_shifter.
+<suppressed ~1 debug messages>
+Optimizing module leading_zero.
+<suppressed ~24 debug messages>
+Optimizing module $paramod\left_shifter\mant=s32'00000000000000000000000000011011.
+
+6. Executing FLATTEN pass (flatten design).
+Deleting now unused module $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\matrix_multiply_2x2_2x1.
+Deleting now unused module $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\matrix_multiply_1x2_2x1.
+Deleting now unused module add_sub.
+Deleting now unused module $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\sigmoid_approx.
+Deleting now unused module rounding.
+Deleting now unused module $paramod\invert\width=s32'00000000000000000000000000011001.
+Deleting now unused module $paramod\rvdff\WIDTH=s32'00000000000000000000000000001010.
+Deleting now unused module $paramod\rvdff\WIDTH=s32'00000000000000000000000000000011.
+Deleting now unused module $paramod\rvdff\WIDTH=s32'00000000000000000000000000010111.
+Deleting now unused module $paramod\rvdff\WIDTH=s32'00000000000000000000000000000001.
+Deleting now unused module $paramod\invert\width=s32'00000000000000000000000000010111.
+Deleting now unused module $paramod\rvdff\WIDTH=s32'00000000000000000000000000011010.
+Deleting now unused module $paramod$c6e9536b7e6263460d855051cd973b955ec52664\round_excep.
+Deleting now unused module $paramod\rvdff\WIDTH=s32'00000000000000000000000000000101.
+Deleting now unused module $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\exponent.
+Deleting now unused module $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\mac_spec_check.
+Deleting now unused module $paramod\rvdffe\WIDTH=s32'00000000000000000000000000000101.
+Deleting now unused module $paramod\rvdffe\WIDTH=s32'00000000000000000000000000001010.
+Deleting now unused module $paramod\rvdffe\WIDTH=s32'00000000000000000000000000000011.
+Deleting now unused module $paramod\rvdffe\WIDTH=s32'00000000000000000000000000010111.
+Deleting now unused module $paramod\rvdffe\WIDTH=s32'00000000000000000000000000000001.
+Deleting now unused module $paramod\rvdffe\WIDTH=s32'00000000000000000000000000011010.
+Deleting now unused module $paramod$5bf976f106c35ed8ba6b089b3795de02364d6ce6\lead_zero_param.
+Deleting now unused module $paramod$11733d16b27ca02259298891e6aef19e53efe2d0\low_mask_lo_hi.
+Deleting now unused module $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\divider.
+Deleting now unused module $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\multiplier.
+Deleting now unused module $paramod$da76b7f863ce0e268ea90375e64095684ffc4cf0\special_check.
+Deleting now unused module right_shifter.
+Deleting now unused module leading_zero.
+Deleting now unused module $paramod\left_shifter\mant=s32'00000000000000000000000000011011.
+<suppressed ~65 debug messages>
+
+7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \NN..
+Removed 2459 unused cells and 9911 unused wires.
+<suppressed ~6164 debug messages>

@@ -1,0 +1,6 @@
+{
+  "DESIGN_NAME": "NN",
+  "VERILOG_FILES": ["dir::add_sub.sv", "dir::multiplier.sv", "dir::divider.sv", "dir::fpu_lib.sv", "dir::sigmoid_v4.sv", "dir::matrix_multiply_2x2_2x1.sv", "dir::matrix_multiply_1x2_2x1.sv", "dir::NN.sv"],
+  "CLOCK_PERIOD": 25,
+  "CLOCK_PORT": "clk"
+}

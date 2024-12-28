@@ -1,0 +1,5 @@
+`verilator_config
+lint_off -rule DECLFILENAME
+lint_off -rule EOFNEWLINE
+lint_off -rule UNDRIVEN -file "/home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/runs/RUN_2024-12-28_14-24-39/tmp/358abbcee5404ec7834b8751d54ebe2b.bb.v"
+lint_off -rule UNUSEDSIGNAL -file "/home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/runs/RUN_2024-12-28_14-24-39/tmp/358abbcee5404ec7834b8751d54ebe2b.bb.v"
