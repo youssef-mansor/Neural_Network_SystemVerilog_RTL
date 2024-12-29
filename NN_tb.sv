@@ -13,7 +13,8 @@ module NN_tb;
 
     // Outputs
     wire [data_width-1:0] XOR_output;
-    wire [4:0] exceptions;
+    //wire [4:0] exceptions;
+    wire ready;
 
     // Clock period
     parameter CLK_PERIOD = 10;
@@ -38,7 +39,8 @@ module NN_tb;
         .rst_l(rst_l),
         .round_mode(round_mode),
         .XOR_output(XOR_output),
-        .exceptions(exceptions)
+        .ready(ready)
+        //.exceptions(exceptions)
     );
     
     // Clock generation

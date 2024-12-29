@@ -27,7 +27,8 @@ module NN #(
     input wire clk,
     input wire rst_l,
      input wire [2:0] round_mode,
-
+    // Output: ready to denote when the XOR_output is valid
+    output reg ready,
     // Output: XOR result
     output wire  [(exp_width + mant_width - 1):0] XOR_output
     //output wire  [4:0] exceptions
@@ -52,6 +53,47 @@ module NN #(
     //assign exceptions_total = exceptions_mm1 | exceptions_mm2 | exceptions_sig1|exceptions_sig2 | exceptions_add1|exceptions_add2|exceptions_add3|exceptions_sig3;
     
     //assign exceptions = exceptions_total;
+    
+    // Wires declarations for ready signal
+    reg [5:0] cycle_counter; // Counter for tracking cycles (max value 63)
+    reg [(exp_width + mant_width - 1):0] prev_A;
+    reg [(exp_width + mant_width - 1):0] prev_B;
+
+    // Input change detection
+    wire input_changed = (A != prev_A) || (B != prev_B);
+    
+	    // Ready signal logic
+	always @(posedge clk or negedge rst_l) begin
+	    if (!rst_l) begin
+		ready <= 1'b0;
+		cycle_counter <= 6'd0;
+		prev_A <= {exp_width + mant_width{1'b0}};
+		prev_B <= {exp_width + mant_width{1'b0}};
+	    end else begin
+		if (input_changed) begin
+		    // Input has changed
+		    ready <= 1'b0;
+		    cycle_counter <= 6'd0;
+		    // Update previous values immediately to reflect the new inputs
+		    prev_A <= A;
+		    prev_B <= B;
+		end else begin
+		    // Inputs have not changed
+		    if (cycle_counter < 6'd54) begin
+		        // Increment counter until 58 cycles are completed
+		        cycle_counter <= cycle_counter + 1;
+		        ready <= 1'b0;
+		    end else if (cycle_counter >= 6'd54) begin
+		        // Set ready high when 54 cycles passed
+		        ready <= 1'b1;
+		    end
+		    // Update previous values only if no input change is detected
+		    prev_A <= A;
+		    prev_B <= B;
+		end
+	    end
+	end
+
 
 
     // Instantiate matrix multiplication module for the first layer
@@ -162,6 +204,7 @@ module NN #(
         //.exceptions(exceptions_sig3)
         .out_valid(out_valid_sig3)
     );
+    
 
 
 
