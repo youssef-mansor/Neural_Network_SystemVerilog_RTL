@@ -1,33 +1,80 @@
-module #(
-    parameter exp_width = 8,
-    parameter mant_width = 24
-) NN_registers(
+`include "fpu_lib.sv"
+module  NN_registers(
     input  wire         clk,
     input  wire         rst_l,
     input  wire  [31:0] NN_result, //contaminated
-    input  wire  [31:0] result, //written only when ready
     input  wire  [31:0] addr,
     input  wire         wren,
     input  wire         ready, //to act as wren for result
     input  wire  [31:0] wrdata,
 
+    output  wire  [31:0] result, //written only when ready
     output wire         ack,
-    output wire [(exp_width + mant_width - 1):0] rddata,
-    output wire [(exp_width + mant_width - 1):0] opA,
-    output wire [(exp_width + mant_width - 1):0] opB,
-    output wire [(exp_width + mant_width - 1):0] w11,
-    output wire [(exp_width + mant_width - 1):0] w12,
-    output wire [(exp_width + mant_width - 1):0] w21,
-    output wire [(exp_width + mant_width - 1):0] w22,
-    output wire [(exp_width + mant_width - 1):0] b1,
-    output wire [(exp_width + mant_width - 1):0] b2,
-    output wire [(exp_width + mant_width - 1):0] w31,
-    output wire [(exp_width + mant_width - 1):0] w32,
-    output wire [(exp_width + mant_width - 1):0] b3,
-
+    output wire [31:0] rddata,
+    output wire [31:0] opA,
+    output wire [31:0] opB,
+    output wire [31:0] w11,
+    output wire [31:0] w12,
+    output wire [31:0] w21,
+    output wire [31:0] w22,
+    output wire [31:0] b1,
+    output wire [31:0] b2,
+    output wire [31:0] w31,
+    output wire [31:0] w32,
+    output wire [31:0] b3
 );
 
+
    localparam base_addr = 32'h3000_0000;
+
+   // Define addresses for weights and biases
+   localparam W11_ADDR = base_addr + 8'h08;
+   localparam W12_ADDR = base_addr + 8'h0C;
+   localparam W21_ADDR = base_addr + 8'h10;
+   localparam W22_ADDR = base_addr + 8'h18;
+   localparam W31_ADDR = base_addr + 8'h1C;
+   localparam W32_ADDR = base_addr + 8'h20;
+   localparam B1_ADDR  = base_addr + 8'h24;
+   localparam B2_ADDR  = base_addr + 8'h28;
+   localparam B3_ADDR  = base_addr + 8'h2C;
+
+   localparam DEFAULT_VALUE = 32'h3f333334; // Default hard-coded value
+
+   // Initialize weights and biases
+   wire [31:0] w11_reg, w12_reg, w21_reg, w22_reg, w31_reg, w32_reg;
+   wire [31:0] b1_reg, b2_reg, b3_reg;
+
+   assign w11 = w11_reg;
+   assign w12 = w12_reg;
+   assign w21 = w21_reg;
+   assign w22 = w22_reg;
+   assign w31 = w31_reg;
+   assign w32 = w32_reg;
+   assign b1  = b1_reg;
+   assign b2  = b2_reg;
+   assign b3  = b3_reg;
+
+   // Register files for weights and biases (initialized at reset) //TODO update the logic here so that writting happens only rst_l is set high 
+   rvdffe #(32) w11_ff (.clk(clk), .rst_l(rst_l), .en(1'b1), .din(32'h40800000), .dout(w11_reg));
+   rvdffe #(32) w12_ff (.clk(clk), .rst_l(rst_l), .en(1'b1), .din(32'h40800000), .dout(w12_reg));
+   rvdffe #(32) w21_ff (.clk(clk), .rst_l(rst_l), .en(1'b1), .din(32'hc0800000), .dout(w21_reg));
+   rvdffe #(32) w22_ff (.clk(clk), .rst_l(rst_l), .en(1'b1), .din(32'hc0800000), .dout(w22_reg));
+   rvdffe #(32) w31_ff (.clk(clk), .rst_l(rst_l), .en(1'b1), .din(32'h40800000), .dout(w31_reg));
+   rvdffe #(32) w32_ff (.clk(clk), .rst_l(rst_l), .en(1'b1), .din(32'h40800000), .dout(w32_reg));
+   rvdffe #(32) b1_ff  (.clk(clk), .rst_l(rst_l), .en(1'b1), .din(32'hc0000000), .dout(b1_reg));
+   rvdffe #(32) b2_ff  (.clk(clk), .rst_l(rst_l), .en(1'b1), .din(32'h40c00000), .dout(b2_reg));
+   rvdffe #(32) b3_ff  (.clk(clk), .rst_l(rst_l), .en(1'b1), .din(32'hc0c00000), .dout(b3_reg));
+
+   // Address decoding for weights and biases
+   wire addr_w11 = (addr[31:0] == W11_ADDR);
+   wire addr_w12 = (addr[31:0] == W12_ADDR);
+   wire addr_w21 = (addr[31:0] == W21_ADDR);
+   wire addr_w22 = (addr[31:0] == W22_ADDR);
+   wire addr_w31 = (addr[31:0] == W31_ADDR);
+   wire addr_w32 = (addr[31:0] == W32_ADDR);
+   wire addr_b1  = (addr[31:0] == B1_ADDR);
+   wire addr_b2  = (addr[31:0] == B2_ADDR);
+   wire addr_b3  = (addr[31:0] == B3_ADDR);
     
    // ----------------------------------------------------------------------
    // OPERAND_A (RW)
@@ -63,7 +110,7 @@ module #(
    // ----------------------------------------------------------------------
    // RESULT (RW)
    //  [31:0]   RESULT
-   localparam RESULT = base_addr + 8'h0C;
+   localparam RESULT = base_addr + 8'h30;
 
    wire        addr_result;
    wire        wr_result;
@@ -79,13 +126,24 @@ module #(
    // ----------------------------------------------------------------------
 
 
-   assign fcsr_read = {frm, fflags};
 
-   assign rddata    = ({32{addr_A}}        & opA)                |
-                      ({32{addr_B}}        & opB)                |
-                      ({32{addr_result}}   & result)             ;
-                      ({32{fcsr_addr}}     & {24'b0, fcsr_read});
 
-    assign ack = (addr == OPERAND_A) | (addr == OPERAND_B) | (addr == RESULT);
+ // Assign read data (MUX logic for rddata)
+   assign rddata = ({32{addr_A}}        & opA)      |
+                   ({32{addr_B}}        & opB)      |
+                   ({32{addr_result}}   & result)   |
+                   ({32{addr_w11}}      & w11_reg)  |
+                   ({32{addr_w12}}      & w12_reg)  |
+                   ({32{addr_w21}}      & w21_reg)  |
+                   ({32{addr_w22}}      & w22_reg)  |
+                   ({32{addr_w31}}      & w31_reg)  |
+                   ({32{addr_w32}}      & w32_reg)  |
+                   ({32{addr_b1}}       & b1_reg)   |
+                   ({32{addr_b2}}       & b2_reg)   |
+                   ({32{addr_b3}}       & b3_reg);
+
+   // Acknowledge signal
+   assign ack = addr_A | addr_B | addr_result | addr_w11 | addr_w12 | addr_w21 |
+                addr_w22 | addr_w31 | addr_w32 | addr_b1 | addr_b2 | addr_b3;
 
 endmodule
