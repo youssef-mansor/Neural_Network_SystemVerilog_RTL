@@ -46,20 +46,20 @@ def xor_neural_network(A, B, w11, w12, w21, w22, b1, b2, w31, w32, b3):
 
   # Layer 1
   h1_pre_sig = A * w11 + B * w12 + b1
-  print(f"h1_pre_sig: {h1_pre_sig}  ({float_to_hex(h1_pre_sig)})")
+  #print(f"h1_pre_sig: {h1_pre_sig}  ({float_to_hex(h1_pre_sig)})")
   h1 = approx_g(h1_pre_sig)
-  print(f"h1: {h1} ({float_to_hex(h1)})")
+  #print(f"h1: {h1} ({float_to_hex(h1)})")
 
   # Layer 2
   h2_pre_sig = A * w21 + B * w22 + b2
-  print(f"h2_pre_sig: {h2_pre_sig} ({float_to_hex(h2_pre_sig)})")
+  #print(f"h2_pre_sig: {h2_pre_sig} ({float_to_hex(h2_pre_sig)})")
   h2 = approx_g(h2_pre_sig)
-  print(f"h2: {h2} ({float_to_hex(h2)})")
+  #print(f"h2: {h2} ({float_to_hex(h2)})")
 
 
   # Output Layer Calculation
   XOR_output_pre_sig = h1 * w31 + h2 * w32 + b3
-  print(f"XOR_output_pre_sig: {XOR_output_pre_sig} ({float_to_hex(XOR_output_pre_sig)})")
+  #print(f"XOR_output_pre_sig: {XOR_output_pre_sig} ({float_to_hex(XOR_output_pre_sig)})")
   XOR_output = approx_g(XOR_output_pre_sig)
   print(f"XOR_output: {XOR_output} ({float_to_hex(XOR_output)})")
 

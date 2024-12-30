@@ -1,6 +1,6 @@
 <testsuites name="results">
   <testsuite name="all" package="all">
-    <property name="random_seed" value="1735514943" />
-    <testcase name="nn_testbench" classname="NN_cocotb" file="/home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/verilog/cocotb/NN_cocotb.py" lineno="5" time="0.29163217544555664" sim_time_ns="2400.001" ratio_time="8229.548047410306" />
+    <property name="random_seed" value="1735532483" />
+    <testcase name="nn_testbench" classname="NN_cocotb" file="/home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/verilog/cocotb/NN_cocotb.py" lineno="5" time="0.33522796630859375" sim_time_ns="2400.001" ratio_time="7159.310204419764" />
   </testsuite>
 </testsuites>
