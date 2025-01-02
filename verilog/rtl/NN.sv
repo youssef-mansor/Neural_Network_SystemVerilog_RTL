@@ -5,34 +5,116 @@
 `include "matrix_multiply_1x2_2x1.sv"
 `include "matrix_multiply_2x2_2x1.sv"
 `include "sigmoid_v5.sv"
+`include "NN_registers.sv"
 
 module NN #(
     parameter exp_width = 8,
     parameter mant_width = 24
 ) (
-    // Inputs: Weights and Biases
-    input wire [(exp_width + mant_width - 1):0] w11,
-    input wire [(exp_width + mant_width - 1):0] w12,
-    input wire [(exp_width + mant_width - 1):0] w21,
-    input wire [(exp_width + mant_width - 1):0] w22,
-    input wire [(exp_width + mant_width - 1):0] b1,
-    input wire [(exp_width + mant_width - 1):0] b2,
-    input wire [(exp_width + mant_width - 1):0] w31,
-    input wire [(exp_width + mant_width - 1):0] w32,
-    input wire [(exp_width + mant_width - 1):0] b3,
-
-    // Inputs: User inputs A and B
-    input wire [(exp_width + mant_width - 1):0] A,
-    input wire [(exp_width + mant_width - 1):0] B,
     input wire clk,
     input wire rst_l,
-     input wire [2:0] round_mode,
-    // Output: ready to denote when the XOR_output is valid
-    output reg ready,
-    // Output: XOR result
-    output wire  [(exp_width + mant_width - 1):0] XOR_output
-    //output wire  [4:0] exceptions
+    input wire [2:0] round_mode,
+    input wire in_valid_user, //set by the user and will make wire in_valid_pulse be high for one cycle
+    
+    // Memory
+    input wire [31:0] wbs_adr_i, // Caravel: user_proj_example 
+    input wire [31:0] wbs_dat_i, // Caravel: user_proj_example 
+    input wire  wren, // Caravel: user_proj_example look at it as wren for the csrs
+    
+
+    output wire  [(exp_width + mant_width - 1):0] NN_result,
+    output wire wbs_ack_o,
+    output wire [31:0] wbs_dat_o                // read  data sent to wb    
 );
+    //after 54 cycles of stable input ready is set to high it denotes when denote when the NN_result is valid
+    reg ready;   
+    // Inputs, Weights and Biases
+    wire [(exp_width + mant_width - 1):0] A;
+    wire [(exp_width + mant_width - 1):0] B;
+    wire [(exp_width + mant_width - 1):0] w11;
+    wire [(exp_width + mant_width - 1):0] w12;
+    wire [(exp_width + mant_width - 1):0] w21;
+    wire [(exp_width + mant_width - 1):0] w22;
+    wire [(exp_width + mant_width - 1):0] b1;
+    wire [(exp_width + mant_width - 1):0] b2;
+    wire [(exp_width + mant_width - 1):0] w31;
+    wire [(exp_width + mant_width - 1):0] w32;
+    wire [(exp_width + mant_width - 1):0] b3;
+    // NN_result holds the temporary result before it is stabilized (last sequential divider finishes its operations)
+    wire  [(exp_width + mant_width - 1):0] final_res;    
+    wire [(exp_width + mant_width - 1):0] int_wbs_dat_o;
+    assign wbs_dat_o = wren? 32'h00000000: int_wbs_dat_o; //if writting is enabled you can not read data
+
+
+    // Generate in_valid_pulse (pulse for one clock cycle)
+    reg in_valid_user_d; // Delayed signal to detect rising edge
+    reg in_valid_pulse;  // Pulse signal
+    always @(posedge clk or negedge rst_l) begin
+        if (~rst_l) begin
+            in_valid_user_d <= 1'b0;
+            in_valid_pulse <= 1'b0;
+        end else begin
+            in_valid_user_d <= in_valid_user;
+            in_valid_pulse <= in_valid_user & ~in_valid_user_d;
+        end
+    end
+    
+    // Counter to track how many out_valid signals are high
+    reg [1:0] out_valid_counter; // 2-bit counter
+
+    always @(posedge clk or negedge rst_l) begin
+        if (~rst_l) begin
+            out_valid_counter <= 2'b00;
+        end else begin
+            if (out_valid_sig1) begin
+                out_valid_counter[0] <= 1'b1; // Signal 1 is high
+            end
+            if (out_valid_sig2) begin
+                out_valid_counter[1] <= 1'b1; // Signal 2 is high
+            end
+        end
+    end
+
+    // Generate in_valid_sig3 pulse when counter reaches 2
+    reg in_valid_sig3;
+
+    always @(posedge clk or negedge rst_l) begin
+        if (~rst_l) begin
+            in_valid_sig3 <= 1'b0;
+        end else begin
+            if (out_valid_counter == 2'b11) begin // Both signals are high
+                in_valid_sig3 <= 1'b1;  // Pulse in_valid_sig3
+                out_valid_counter[0] <= 1'b0; // Signal 1 is low
+                out_valid_counter[1] <= 1'b0; // Signal 2 is low
+            end else begin
+                in_valid_sig3 <= 1'b0;  // Reset pulse after one cycle
+            end
+        end
+    end
+
+
+
+    NN_registers u_NN_registers (
+    .clk      (clk),  // Input: Clock signal
+    .rst_l    (rst_l),  // Input: Active-low reset signal
+    .wbs_adr_i     (wbs_adr_i),  // Input: Address
+    .wren     (wren),  // Input: Write enable
+    .wbs_dat_i   (wbs_dat_i),  // Input: Write data
+
+    .wbs_ack_o      (wbs_ack_o),  // Output: Acknowledge signal
+    .wbs_dat_o   (int_wbs_dat_o),  // Output: Read data
+    .opA      (A),  // Output: Operand A
+    .opB      (B),  // Output: Operand B
+    .w11      (w11),  // Output: Weight w11
+    .w12      (w12),  // Output: Weight w12
+    .w21      (w21),  // Output: Weight w21
+    .w22      (w22),  // Output: Weight w22
+    .b1       (b1),  // Output: Bias b1
+    .b2       (b2),  // Output: Bias b2
+    .w31      (w31),  // Output: Weight w31
+    .w32      (w32),  // Output: Weight w32
+    .b3       (b3)   // Output: Bias b3
+    );
 
     // Internal Wires for Hidden Layer
     wire [(exp_width + mant_width - 1):0] h1_pre_sigmoid;
@@ -48,53 +130,10 @@ module NN #(
     //wire [4:0] exceptions_total;
 
 
-
     
     //assign exceptions_total = exceptions_mm1 | exceptions_mm2 | exceptions_sig1|exceptions_sig2 | exceptions_add1|exceptions_add2|exceptions_add3|exceptions_sig3;
     
     //assign exceptions = exceptions_total;
-    
-    // Wires declarations for ready signal
-    reg [5:0] cycle_counter; // Counter for tracking cycles (max value 63)
-    reg [(exp_width + mant_width - 1):0] prev_A;
-    reg [(exp_width + mant_width - 1):0] prev_B;
-
-    // Input change detection
-    wire input_changed = (A != prev_A) || (B != prev_B);
-    
-	    // Ready signal logic
-	always @(posedge clk or negedge rst_l) begin
-	    if (!rst_l) begin
-		ready <= 1'b0;
-		cycle_counter <= 6'd0;
-		prev_A <= {exp_width + mant_width{1'b0}};
-		prev_B <= {exp_width + mant_width{1'b0}};
-	    end else begin
-		if (input_changed) begin
-		    // Input has changed
-		    ready <= 1'b0;
-		    cycle_counter <= 6'd0;
-		    // Update previous values immediately to reflect the new inputs
-		    prev_A <= A;
-		    prev_B <= B;
-		end else begin
-		    // Inputs have not changed
-		    if (cycle_counter < 6'd54) begin
-		        // Increment counter until 58 cycles are completed
-		        cycle_counter <= cycle_counter + 1;
-		        ready <= 1'b0;
-		    end else if (cycle_counter >= 6'd54) begin
-		        // Set ready high when 54 cycles passed
-		        ready <= 1'b1;
-		    end
-		    // Update previous values only if no input change is detected
-		    prev_A <= A;
-		    prev_B <= B;
-		end
-	    end
-	end
-
-
 
     // Instantiate matrix multiplication module for the first layer
     matrix_multiply_2x2_2x1 #(
@@ -144,8 +183,8 @@ module NN #(
         .clk(clk),
         .rst_l(rst_l),
         .round_mode(round_mode),
+        .in_valid(in_valid_pulse),
         .out_sigmoid(h1_out),
-
         //.exceptions(exceptions_sig1)
         .out_valid(out_valid_sig1)
     );
@@ -159,8 +198,8 @@ module NN #(
         .clk(clk),
         .rst_l(rst_l),
         .round_mode(round_mode),
+        .in_valid(in_valid_pulse),
         .out_sigmoid(h2_out),
-
          //.exceptions(exceptions_sig2)
          .out_valid(out_valid_sig2)
      );
@@ -199,13 +238,10 @@ module NN #(
         .clk(clk),
         .rst_l(rst_l),
         .round_mode(round_mode),
-        .out_sigmoid(XOR_output),
-
+        .in_valid(in_valid_sig3),
+        .out_sigmoid(NN_result),
         //.exceptions(exceptions_sig3)
-        .out_valid(out_valid_sig3)
+        .out_valid(ready)
     );
     
-
-
-
 endmodule

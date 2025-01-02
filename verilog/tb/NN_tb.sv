@@ -1,86 +1,134 @@
 `include "../rtl/NN.sv"
 module NN_tb;
 
-    // Parameters for floating-point representation
+    // Parameters for the floating-point representation
     parameter exp_width = 8;
     parameter mant_width = 24;
-    parameter data_width = exp_width + mant_width;
 
-    // Inputs
-    reg [data_width-1:0] w11, w12, w21, w22, b1, b2, w31, w32, b3, A, B;
-    reg clk, rst_l;
+    // Testbench signals
+    reg clk;
+    reg rst_l;
     reg [2:0] round_mode;
-
-    // Outputs
-    wire [data_width-1:0] XOR_output;
-    //wire [4:0] exceptions;
-    wire ready;
-
-    // Clock period
-    parameter CLK_PERIOD = 10;
+    reg in_valid_user;
+    reg [31:0] wbs_adr_i;  // Address input for writes/reads
+    reg [31:0] wbs_dat_i;      // Data input for writes
+    reg wren;             // Write enable signal
+    
+    wire [(exp_width + mant_width - 1):0] NN_result; // Final result output
+    wire wbs_ack_o;        // Acknowledge signal
+    wire [31:0] wbs_dat_o;    // Read data
 
     // Instantiate the NN module
     NN #(
         .exp_width(exp_width),
         .mant_width(mant_width)
-    ) dut (
-        .w11(w11),
-        .w12(w12),
-        .w21(w21),
-        .w22(w22),
-        .b1(b1),
-        .b2(b2),
-        .w31(w31),
-        .w32(w32),
-        .b3(b3),
-        .A(A),
-        .B(B),
+    ) uut (
         .clk(clk),
         .rst_l(rst_l),
         .round_mode(round_mode),
-        .XOR_output(XOR_output),
-        .ready(ready)
-        //.exceptions(exceptions)
+        .in_valid_user(in_valid_user),
+        .wbs_adr_i(wbs_adr_i),
+        .wbs_dat_i(wbs_dat_i),
+        .wren(wren),
+        .NN_result(NN_result),
+        .wbs_ack_o(wbs_ack_o),
+        .wbs_dat_o(wbs_dat_o)
     );
-    
-    // Clock generation
-    always #(CLK_PERIOD/2) clk = ~clk;
 
+    // Clock generation
+    always begin
+        #5 clk = ~clk;  // 100 MHz clock
+    end
+
+    // Test procedure
     initial begin
+        // Open a VCD file to dump signal values
+        $dumpfile("../sim/NN_tb.vcd");
+        $dumpvars(0, NN_tb);
+
         // Initialize inputs
         clk = 0;
         rst_l = 0;
-        round_mode = 3'b000;
-        #2 rst_l = 1;
+        round_mode = 3'b000; // Round to nearest
+        wbs_adr_i = 32'h00000000;
+        wbs_dat_i = 32'h00000000;
+        wren = 0;
+        in_valid_user = 0;
 
+        // Release reset after a few cycles
+        #10 rst_l = 1;
 
-    w11 = 32'h40800000;  // 4.0
-    w12 = 32'h40800000;  // 4.0
-    w21 = 32'hc0800000;  // -4.0
-    w22 = 32'hc0800000;  // -4.0
-    b1  = 32'hc0000000;   // -2.0
-    b2  = 32'h40c00000;   // 6.0
-    w31 = 32'h40800000;  // 4.0
-    w32 = 32'h40800000;  // 4.0
-    b3  = 32'hc0c00000;   // -6.0
-        
+        // Test Case 1: Set Operand A to 1.0 and Operand B to 0.0
+        $display("Test Case 1: A=1.0, B=0.0");
+        #10 wbs_adr_i = 32'h30000000;  // Address for opA
+        wbs_dat_i = 32'h3F800000;         // 1.0 in floating-point
+        wren = 1;
+        #10 wren = 0;
 
-        $display("-------------------------------------------------------------------------");
-        $display("| A Value      | B Value      |  XOR Output  | Output > 0.5 |");
-        $display("-------------------------------------------------------------------------");
+        #10 wbs_adr_i = 32'h30000004;  // Address for opB
+        wbs_dat_i = 32'h00000000;         // 0.0 in floating-point
+        wren = 1;
+        #10 wren = 0;
+        in_valid_user = 1; #20;
+        in_valid_user = 0;
+        // Wait for 54 cycles for NN processing
+        repeat(70) @(posedge clk);
+        #10 $display("Final Result (A=1.0, B=0.0): %h", NN_result);
 
-        // Test cases for XOR
-        A = 32'h00000000; B = 32'h00000000; #640;  $display("| %h    | %h    | %h   | %d      |",   A,  B, XOR_output, XOR_output > 32'h3f000000 ? 1 : 0);
-        A = 32'h00000000; B = 32'h3f800000; #640;  $display("| %h    | %h    | %h   | %d      |",  A, B,  XOR_output, XOR_output > 32'h3f000000 ? 1 : 0);
-        A = 32'h3f800000; B = 32'h00000000; #640;   $display("| %h    | %h    | %h   | %d      |", A,  B, XOR_output, XOR_output > 32'h3f000000 ? 1 : 0);
-        A = 32'h3f800000; B = 32'h3f800000; #640;   $display("| %h    | %h    | %h   | %d      |", A,  B, XOR_output, XOR_output > 32'h3f000000 ? 1 : 0);
-         $display("-------------------------------------------------------------------------");
+        // Test Case 2: Set Operand A to 0.0 and Operand B to 1.0
+        $display("Test Case 2: A=0.0, B=1.0");
+        #10 wbs_adr_i = 32'h30000000;  // Address for opA
+        wbs_dat_i = 32'h00000000;         // 0.0 in floating-point
+        wren = 1;
+        #10 wren = 0;
+
+        #10 wbs_adr_i = 32'h30000004;  // Address for opB
+        wbs_dat_i = 32'h3F800000;         // 1.0 in floating-point
+        wren = 1;
+        #10 wren = 0;
+        in_valid_user = 1; #20;
+        in_valid_user = 0;
+        // Wait for 54 cycles for NN processing
+        repeat(70) @(posedge clk);
+        #10 $display("Final Result (A=0.0, B=1.0): %h", NN_result);
+
+        // Test Case 3: Set Operand A to 1.0 and Operand B to 1.0
+        $display("Test Case 3: A=1.0, B=1.0");
+        #10 wbs_adr_i = 32'h30000000;  // Address for opA
+        wbs_dat_i = 32'h3F800000;         // 1.0 in floating-point
+        wren = 1;
+        #10 wren = 0;
+
+        #10 wbs_adr_i = 32'h30000004;  // Address for opB
+        wbs_dat_i = 32'h3F800000;         // 1.0 in floating-point
+        wren = 1;
+        #10 wren = 0;
+        in_valid_user = 1; #20;
+        in_valid_user = 0;
+        // Wait for 54 cycles for NN processing
+        repeat(70) @(posedge clk);
+        #10 $display("Final Result (A=1.0, B=1.0): %h", NN_result);
+
+        // Test Case 4: Set Operand A to 0.0 and Operand B to 0.0
+        $display("Test Case 4: A=0.0, B=0.0");
+        #10 wbs_adr_i = 32'h30000000;  // Address for opA
+        wbs_dat_i = 32'h00000000;         // 0.0 in floating-point
+        wren = 1;
+        #10 wren = 0;
+
+        #10 wbs_adr_i = 32'h30000004;  // Address for opB
+        wbs_dat_i = 32'h00000000;         // 0.0 in floating-point
+        wren = 1;
+        #10 wren = 0;
+        in_valid_user = 1; #20;
+        in_valid_user = 0;
+        // Wait for 54 cycles for NN processing
+        repeat(70) @(posedge clk);
+        #10 $display("Final Result (A=0.0, B=0.0): %h", NN_result);
+
+        // Finish the simulation
         $finish;
     end
-    
-      initial begin
-    $dumpfile("../sim/NN_tb.vcd");
-    $dumpvars(0, NN_tb);
-  end
 
 endmodule
+

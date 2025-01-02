@@ -1,7 +1,7 @@
-//`include "fpu_lib.sv"
-//`include "add_sub.sv"
-//`include "multiplier.sv"
-//`include "divider.sv"
+// `include "fpu_lib.sv"
+// `include "add_sub.sv"
+// `include "multiplier.sv"
+// `include "divider.sv"
 
 module sigmoid_approx #(parameter exp_width = 8, parameter mant_width = 24)
 (
@@ -9,8 +9,8 @@ module sigmoid_approx #(parameter exp_width = 8, parameter mant_width = 24)
     input  wire                                   clk,
     input  wire                                   rst_l,
     input wire [2:0] round_mode,
-    
-    output wire [(exp_width + mant_width - 1):0] out_sigmoid,
+    input wire in_valid, //TODO update tb
+    output reg [(exp_width + mant_width - 1):0] out_sigmoid,
    // output wire [4:0] exceptions,
     output wire out_valid //indicates when output is ready because calculations take multiple cycles
 );
@@ -23,11 +23,7 @@ module sigmoid_approx #(parameter exp_width = 8, parameter mant_width = 24)
   // Division stage wires and registers
   wire [(exp_width + mant_width - 1):0] x_div_one_minus_x;
   wire [(exp_width + mant_width - 1):0] x_div_one_plus_x;
-  reg  [(exp_width + mant_width - 1):0] x_div_one_minus_x_reg;
-  reg  [(exp_width + mant_width - 1):0] x_div_one_plus_x_reg;
   wire div_inst1_out_valid, div_inst2_out_valid;
-  reg  div_inst1_in_valid, div_inst2_in_valid;
-  reg  [(exp_width + mant_width - 1):0] in_x_reg;
     
   // After Division Stage
   wire [(exp_width + mant_width - 1):0] term1;
@@ -38,10 +34,8 @@ module sigmoid_approx #(parameter exp_width = 8, parameter mant_width = 24)
   wire [(exp_width + mant_width - 1):0] half_val;
   wire [(exp_width + mant_width - 1):0] one_val;
   wire                                  x_is_negative;
+  wire [(exp_width + mant_width - 1):0] out_sigmoid_not_stbl;
   
-  // Counters to keep div_inst*_in_valid high for two cycles
-  reg [1:0] div_inst1_in_valid_counter;
-  reg [1:0] div_inst2_in_valid_counter;
 
   // Error exception wires
   //wire [4:0] add_exceptions, sub_exceptions_1, sub_exceptions_2, div_exceptions_1, div_exceptions_2, mul_exceptions_1, mul_exceptions_2;
@@ -49,7 +43,14 @@ module sigmoid_approx #(parameter exp_width = 8, parameter mant_width = 24)
     //  Assigning floating point values for 0.5 and 1
   assign half_val = 32'h3f000000; // 0.5 in FP representation
   assign one_val =  32'h3f800000;  // 1.0 in FP representation
-  
+
+    // Register the output of divider once valid
+  always @(posedge clk or negedge rst_l) begin
+          if(out_valid) begin
+            out_sigmoid <= out_sigmoid_not_stbl;
+          end
+  end
+    
   // 1. Determine if x is negative (sign bit check)
   assign x_is_negative = in_x[(exp_width + mant_width - 1)];
 
@@ -86,7 +87,7 @@ module sigmoid_approx #(parameter exp_width = 8, parameter mant_width = 24)
    div_inst1 (
     .rst_l(rst_l),
     .clk(clk),
-    .in_valid(div_inst1_in_valid),
+    .in_valid(in_valid),
     .a(x_neg),
     .b(one_minus_x),
     .round_mode(round_mode),
@@ -102,7 +103,7 @@ module sigmoid_approx #(parameter exp_width = 8, parameter mant_width = 24)
     div_inst2(
     .rst_l(rst_l),
     .clk(clk),
-    .in_valid(div_inst2_in_valid),
+    .in_valid(in_valid),
     .a(in_x),
     .b(one_plus_x),
     .round_mode(round_mode),
@@ -114,56 +115,10 @@ module sigmoid_approx #(parameter exp_width = 8, parameter mant_width = 24)
     //.exceptions(div_exceptions_2)
   );
     
-// Register the output of divider once valid
-always @(posedge clk or negedge rst_l) begin
-    if (!rst_l) begin
-        x_div_one_minus_x_reg <= 0;
-        x_div_one_plus_x_reg <= 0;
-        div_inst1_in_valid <= 0;
-        div_inst2_in_valid <= 0;
-        div_inst1_in_valid_counter <= 0;
-        div_inst2_in_valid_counter <= 0;
-        in_x_reg <= 0;
-    end else begin
-        // Detect a new input to start the process
-        if (in_x != in_x_reg) begin
-            div_inst1_in_valid <= 1;
-            div_inst2_in_valid <= 1;
-            div_inst1_in_valid_counter <= 2; // Set counter for 2 cycles
-            div_inst2_in_valid_counter <= 2; // Set counter for 2 cycles
-            in_x_reg <= in_x;
-        end
-
-        // Handle counters for div_inst1_in_valid
-        if (div_inst1_in_valid_counter > 0) begin
-            div_inst1_in_valid_counter <= div_inst1_in_valid_counter - 1;
-        end
-        if (div_inst1_in_valid_counter == 1) begin
-            div_inst1_in_valid <= 0;
-        end
-
-        // Handle counters for div_inst2_in_valid
-        if (div_inst2_in_valid_counter > 0) begin
-            div_inst2_in_valid_counter <= div_inst2_in_valid_counter - 1;
-        end
-        if (div_inst2_in_valid_counter == 1) begin
-            div_inst2_in_valid <= 0;
-        end
-
-        // Capture the outputs of the dividers when valid
-        if (div_inst1_out_valid) begin
-            x_div_one_minus_x_reg <= x_div_one_minus_x;
-        end
-
-        if (div_inst2_out_valid) begin
-            x_div_one_plus_x_reg <= x_div_one_plus_x;
-        end
-    end
-end
   // 5. Calculate  1 + (-x/(1-x))
   add_sub  add_sub_inst3(
     .in_x(one_val),
-    .in_y(x_div_one_minus_x_reg),
+    .in_y(x_div_one_minus_x),
     .operation(1'b0), // addition
     .round_mode(round_mode),
     .out_z(term1),
@@ -173,7 +128,7 @@ end
 // 1 + (x/(1+x)) 
   add_sub  add_sub_inst4(
     .in_x(one_val),
-    .in_y(x_div_one_plus_x_reg),
+    .in_y(x_div_one_plus_x),
     .operation(1'b0), // addition
     .round_mode(round_mode),
     .out_z(term2),
@@ -215,7 +170,7 @@ end
   );
 
   // 7. Conditional Assignment to output based on x sign
-  assign out_sigmoid = (x_is_negative) ? term1_final : term2_final; 
+  assign out_sigmoid_not_stbl = (x_is_negative) ? term1_final : term2_final; 
 
   //  Consolidated Error Output
  // assign exceptions = add_exceptions | sub_exceptions_1 | sub_exceptions_2 | div_exceptions_1 | div_exceptions_2 | mul_exceptions_1 | mul_exceptions_2;
