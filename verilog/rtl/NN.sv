@@ -1,3 +1,4 @@
+// `include "defs.vi"
 // `include "fpu_lib.sv"
 // `include "add_sub.sv"
 // `include "multiplier.sv"
