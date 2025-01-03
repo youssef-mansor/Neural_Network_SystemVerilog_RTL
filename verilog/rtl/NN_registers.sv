@@ -35,8 +35,6 @@ module  NN_registers(
    localparam B2_ADDR  = base_addr + 8'h28;
    localparam B3_ADDR  = base_addr + 8'h2C;
 
-   localparam DEFAULT_VALUE = 32'h3f333334; // Default hard-coded value
-
    // Initialize weights and biases
    wire [31:0] w11_reg, w12_reg, w21_reg, w22_reg, w31_reg, w32_reg;
    wire [31:0] b1_reg, b2_reg, b3_reg;
@@ -109,18 +107,18 @@ module  NN_registers(
 
  // Assign read data (MUX logic for wbs_dat_o)
    assign wbs_dat_o = ({32{addr_A}}        & opA)      |
-                   ({32{addr_B}}        & opB)      |
-                   ({32{addr_w11}}      & w11_reg)  |
-                   ({32{addr_w12}}      & w12_reg)  |
-                   ({32{addr_w21}}      & w21_reg)  |
-                   ({32{addr_w22}}      & w22_reg)  |
-                   ({32{addr_w31}}      & w31_reg)  |
-                   ({32{addr_w32}}      & w32_reg)  |
-                   ({32{addr_b1}}       & b1_reg)   |
-                   ({32{addr_b2}}       & b2_reg)   |
-                   ({32{addr_b3}}       & b3_reg);
+                      ({32{addr_B}}        & opB)      |
+                      ({32{addr_w11}}      & w11_reg)  |
+                      ({32{addr_w12}}      & w12_reg)  |
+                      ({32{addr_w21}}      & w21_reg)  |
+                      ({32{addr_w22}}      & w22_reg)  |
+                      ({32{addr_w31}}      & w31_reg)  |
+                      ({32{addr_w32}}      & w32_reg)  |
+                      ({32{addr_b1}}       & b1_reg)   |
+                      ({32{addr_b2}}       & b2_reg)   |
+                      ({32{addr_b3}}       & b3_reg);
 
-   // Acknowledge signal
+   // Acknowledge signal (It doesn't wait for a  clock cycle but rather acknowledge once a correct address is received)
    assign wbs_ack_o = addr_A | addr_B | addr_w11 | addr_w12 | addr_w21 |
                 addr_w22 | addr_w31 | addr_w32 | addr_b1 | addr_b2 | addr_b3;
 
