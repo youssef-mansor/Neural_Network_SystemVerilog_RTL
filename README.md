@@ -127,8 +127,8 @@ Figure 2: Mathematical operations of NN in figure 1
 
 **Verification**: run a python script that uses those values  `NN.py` inside the python folder.
 
-| ![][image8] | ![][image9] |
-| :---- | :---- |
+![Python Verification](report/py_verif.png)
+
 
 # Verilog Implementation
 
@@ -159,10 +159,9 @@ For example, the conversion of hexadecimal representation to decimal representat
 
 ### Sigmoid Function
 
-To make synthesizable SystemVerilog code and overcome the issue of the exponent in the Sigmoid Function **11+e-x** I used the following approximation.
+To make synthesizable SystemVerilog code and overcome the issue of the exponent in the Sigmoid Function [**11+e-x**](https://latex.codecogs.com/png.latex?\frac{1}{1+e^{-x}}) I used the following approximation.
 
-| ![][image12] | ![][image13] |
-| :---- | :---- |
+![Sigmoid Function and its approximation](report/sigmoid_func.png)
 
 Figure 4: Sigmoid function approximation shown in solid red; sigmoid function shown in dotted purple.  
 To implement `sigmoid_approx` module in SystemVerilog I utilized the following modules:
