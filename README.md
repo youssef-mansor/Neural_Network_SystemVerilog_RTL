@@ -240,7 +240,7 @@ All the registers are located in the user design space with the [base address of
 
 <div align="center" text-align="center">
 <img src="report/Caravel_Integration.png" alt="NN Top Module Integration into Caravel User Space" width="600" >
-<p>Figure 7: Hierarchy that illustrates how the NN top module is integrated into Caravel User Space via user\_project\_wrapper.</p>
+<p>Figure 7: Hierarchy that illustrates how the NN top module is integrated into Caravel User Space via <code>user\_project\_wrapper<\code> .</p>
 </div>
 
 # Flow of instructions
