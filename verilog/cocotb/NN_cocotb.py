@@ -32,6 +32,7 @@ async def nn_tb(dut):
     cocotb.log.info("Test Case 1: A=1.0, B=0.0")
 
     # Write Operand A (1.0 in floating-point)
+    await Timer(10, units="ns")
     dut.wbs_adr_i.value = 0x30000000  # Address for opA
     dut.wbs_dat_i.value = 0x3F800000  # 1.0 in floating-point
     dut.wren.value = 1
@@ -39,6 +40,7 @@ async def nn_tb(dut):
     dut.wren.value = 0
 
     # Write Operand B (0.0 in floating-point)
+    await Timer(10, units="ns")
     dut.wbs_adr_i.value = 0x30000004  # Address for opB
     dut.wbs_dat_i.value = 0x00000000  # 0.0 in floating-point
     dut.wren.value = 1
