@@ -1,6 +1,5 @@
 # Neural Network Accelerator using SystemVerilog
-
-(Integration with Efabless Caravel chip)
+### (And integration with Efabless Caravel chip)
 <div align="center">
 
 ![XOR Neural Network Implemented](report/NN_SystemVerilog.png)
