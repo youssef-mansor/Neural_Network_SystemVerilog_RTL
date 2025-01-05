@@ -199,15 +199,18 @@ Top Module is `NN` in  `NN.sv` that implements the mathematical model in figure 
 
 <div align="center" text-align="center">
 <img src="report/NN_diagram.png" alt="NN module diagram" width="400" >
-<p>Figure5: NN module diagram</p>
+<p>Figure 5: NN module diagram</p>
 </div>
 In figure 5 For Neural Network calculations to be performed the NN module depends on NN registers for storing weights and biases and provision of NN inputs (A and B) that are affected by read/write instructions via the wishbone. Only when `in_valid_user` is set to high will the NN Operations commence and the result will be calculated by a forward pass.  
 
 
 ### sigmoid\_approx Module
 
-| In the figure `out_valid` is a flag that indicates the readiness of the result at the `out_sigmoid` signal. It takes on average about 26 cycles for the result to be ready as this module depends on the `divider` module for which you can find more information in [Lampro-Mellon/Caravel\_FPU](https://github.com/Lampro-Mellon/Caravel_FPU/tree/main) . | ![][image15]Figure 6: Sigmoid Module Diagram. |
-| :---- | :---- |
+<div align="center" text-align="center">
+<img src="report/sigmoid.png" alt="Sigmoid Module Diagram" width="400" >
+<p>Figure 6: Sigmoid Module Diagram</p>
+</div>
+|In figure 6 `out_valid` is a flag that indicates the readiness of the result at the `out_sigmoid` signal. It takes on average about 26 cycles for the result to be ready as this module depends on the `divider` module for which you can find more information in [Lampro-Mellon/Caravel\_FPU](https://github.com/Lampro-Mellon/Caravel_FPU/tree/main).
 
 # Caravel Chip Integration
 
@@ -234,11 +237,17 @@ In figure 5 For Neural Network calculations to be performed the NN module depend
 Table 1
 
 All the registers are located in the user design space with the [base address of 0x3000\_0000](https://caravel-harness.readthedocs.io/en/latest/memory-mapped-io-summary.html) \+ the offset described in table 1\.  
-![][image16]  
-Figure 7: Hierarchy that illustrates how the NN top module is integrated into Caravel User Space via user\_project\_wrapper.
+
+
+<div align="center" text-align="center">
+<img src="report/Caravel_Integration.png" alt="NN Top Module Integration into Caravel User Space" width="400" >
+<p>Figure 7: Hierarchy that illustrates how the NN top module is integrated into Caravel User Space via user\_project\_wrapper.</p>
+</div>
 
 # Flow of instructions
 
 To perform a forward pass the following steps are required: 1\. Write each operand with a store instruction to the core. 2\. Once the operation is completed it can be accessed by the core on the GPIO pins.
-
-![][image17]Figure: Flow of instructions
+<div align="center" text-align="center">
+<img src="report/Use_Case_Input_Output.png" alt="Flow of instructions" width="400" >
+<p>Figure 8: Flow of instructions</p>
+</div>
