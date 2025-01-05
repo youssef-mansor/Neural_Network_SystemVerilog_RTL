@@ -15,19 +15,113 @@ The XOR problem refers to the inability of single-layer perceptrons to solve non
 Figure 1 displays a simple neural network with 2-neuron hidden layer and  sigmoid activation functions that solves the XOR Problem.
 
 # Mathematical Model
+<div align="center">
 
-Modeling architecture from Figure 1 mathematically will provide the formal foundation for the SystemVerilog implementation.  
-![][image2]  
-![][image3](EQ 1\)  
-![][image4]
+![Equation 1 Part 1](https://latex.codecogs.com/png.latex?\mathbf{h}=\mathbf{W_h}\cdot\mathbf{x}+\mathbf{b_h})
 
-![][image5]  
-![][image6](EQ 2\)  
-![][image7]  
+![Equation 1 Part 2](https://latex.codecogs.com/png.latex?\mathbf{h}=%5Cbegin%7Bbmatrix%7Dw_%7B11%7D%26w_%7B12%7D%5C%5Cw_%7B21%7D%26w_%7B22%7D%5Cend%7Bbmatrix%7D%5Cbegin%7Bbmatrix%7DA%5C%5CB%5Cend%7Bbmatrix%7D%2B%5Cbegin%7Bbmatrix%7Db_1%5C%5Cb_2%5Cend%7Bbmatrix%7D%3D%5Cbegin%7Bbmatrix%7Dh_1%5C%5Ch_2%5Cend%7Bbmatrix%7D)
+
+
+![h'](https://latex.codecogs.com/png.latex?\mathbf{h'}=%5Cbegin%7Bbmatrix%7D%5Csigma(h_1)%5C%5C%5Csigma(h_2)%5Cend%7Bbmatrix%7D) (EQ1)
+
+
+![Equation 2 Part 1](https://latex.codecogs.com/png.latex?o=\mathbf{W_o}\cdot\mathbf{h'}+b_3)
+
+![Equation 2 Part 2](https://latex.codecogs.com/png.latex?o=%5Cbegin%7Bbmatrix%7Dw_%7B31%7D%26w_%7B32%7D%5Cend%7Bbmatrix%7D%5Cbegin%7Bbmatrix%7D%5Csigma(h_1)%5C%5C%5Csigma(h_2)%5Cend%7Bbmatrix%7D%2Bb_3)
+
+
+![Equation 2 Part 3](https://latex.codecogs.com/png.latex?o=w_{31}\sigma(h_1)+w_{32}\sigma(h_2)+b_3)
+
+![o'](https://latex.codecogs.com/png.latex?o'=\sigma(o)) (EQ2)
+</div>
+
+
 Figure 2: Mathematical operations of NN in figure 1
 
-| Goal Truth Table A B O’ Y 1 1 \< 0.5 0 0 1 \> 0.5 1 1 0 \> 0.5 1 0 0 \<0.5 0  | Values to achieve the Truth Table  var value var value var value w11 4 w22 \-4 b1 \-2 w12 4 w31 4 b2 6 w21 \-4 w32 4 b3 \-6  |
-| :---- | :---- |
+### Goal Truth Table and Values Table
+
+<div style="display: flex; flex-direction: row; justify-content: space-between;">
+
+<table>
+  <caption>Goal Truth Table</caption>
+  <thead>
+    <tr>
+      <th>A</th>
+      <th>B</th>
+      <th>O'</th>
+      <th>Y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>1</td>
+      <td>&lt; 0.5</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>1</td>
+      <td>&gt; 0.5</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>0</td>
+      <td>&gt; 0.5</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>0</td>
+      <td>&lt; 0.5</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <caption>Values to Achieve the Truth Table</caption>
+  <thead>
+    <tr>
+      <th>var</th>
+      <th>value</th>
+      <th>var</th>
+      <th>value</th>
+      <th>var</th>
+      <th>value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>w11</td>
+      <td>4</td>
+      <td>w22</td>
+      <td>-4</td>
+      <td>b1</td>
+      <td>-2</td>
+    </tr>
+    <tr>
+      <td>w12</td>
+      <td>4</td>
+      <td>w31</td>
+      <td>4</td>
+      <td>b2</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>w21</td>
+      <td>-4</td>
+      <td>w32</td>
+      <td>4</td>
+      <td>b3</td>
+      <td>-6</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
 
 **Verification**: run a python script that uses those values  `NN.py` inside the python folder.
 
