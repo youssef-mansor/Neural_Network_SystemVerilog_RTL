@@ -2,7 +2,7 @@
 
 (Integration with Efabless Caravel chip)
 
-![][image1]
+![XOR Neural Network Implemented][report/NN_SystemVerilog.png]
 
 Figure 1: Neural Network Architecture to be implemented 
 
