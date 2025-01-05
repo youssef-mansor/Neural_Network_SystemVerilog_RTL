@@ -127,7 +127,7 @@ Figure 2: Mathematical operations of NN in figure 1
 **Verification**: run a python script that uses those values  `NN.py` inside the python folder.
 
 <div align="center" text-align="center">
-<img src="report/py_verif.png" alt="Python Verification" width="200" >
+<img src="report/py_verif.png" alt="Python Verification" width="300" >
 <p>Python Verification</p>
 </div>
 
