@@ -159,7 +159,7 @@ For example, the conversion of hexadecimal representation to decimal representat
 
 ### Sigmoid Function
 
-To make synthesizable SystemVerilog code and overcome the issue of the exponent in the Sigmoid Function ![sigmoid formula](https://latex.codecogs.com/png.latex?\frac{1}{1+e^{-x}}) I used the following approximation.
+To make synthesizable SystemVerilog code and overcome the issue of the exponent in the Sigmoid Function ![sigmoid formula](https://latex.codecogs.com/png.latex?\frac{1}{1+e^{-x}}) I used the following approximation ![sigmoid approximation](https://latex.codecogs.com/png.latex?g(x)=\text{If}(x<0,1-0.5(1+\frac{-x}{1-x}),0.5(1+\frac{x}{1+x}))).
 
 ![Sigmoid Function and its approximation](report/sigmoid_func.png)
 
