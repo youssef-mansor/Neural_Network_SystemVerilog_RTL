@@ -127,8 +127,8 @@ Figure 2: Mathematical operations of NN in figure 1
 **Verification**: run a python script that uses those values  `NN.py` inside the python folder.
 
 <div align="center" text-align="center">
-<img src="report/py_verif.png" alt="Python Verification" width="400" >
-<p>Python Verification</p>
+<img src="report/py_verif.png" alt="Python Verification of chosen weights and biases" width="400" >
+<p>Python Verification that chosen weights and biases achieve the XOR truth table.</p>
 </div>
 
 # Verilog Implementation
