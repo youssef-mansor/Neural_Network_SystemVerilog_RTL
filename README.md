@@ -240,7 +240,7 @@ All the registers are located in the user design space with the [base address of
 
 
 <div align="center" text-align="center">
-<img src="report/Caravel_Integration.png" alt="NN Top Module Integration into Caravel User Space" width="400" >
+<img src="report/Caravel_Integration.png" alt="NN Top Module Integration into Caravel User Space" width="600" >
 <p>Figure 7: Hierarchy that illustrates how the NN top module is integrated into Caravel User Space via user\_project\_wrapper.</p>
 </div>
 
@@ -248,6 +248,6 @@ All the registers are located in the user design space with the [base address of
 
 To perform a forward pass the following steps are required: 1\. Write each operand with a store instruction to the core. 2\. Once the operation is completed it can be accessed by the core on the GPIO pins.
 <div align="center" text-align="center">
-<img src="report/Use_Case_Input_Output.png" alt="Flow of instructions" width="400" >
+<img src="report/Use_Case_Input_Output.png" alt="Flow of instructions" width="600" >
 <p>Figure 8: Flow of instructions</p>
 </div>
