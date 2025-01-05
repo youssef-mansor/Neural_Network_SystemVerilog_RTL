@@ -40,12 +40,12 @@ Figure 1 displays a simple neural network with 2-neuron hidden layer and  sigmoi
 
 Figure 2: Mathematical operations of NN in figure 1
 
-### Goal Truth Table and Values Table
+### XOR Truth Table and Values Table
 
 <div style="display: flex; flex-direction: row; justify-content: space-between;">
 
 <table>
-  <caption>Goal Truth Table</caption>
+  <caption>XOR Truth Table</caption>
   <thead>
     <tr>
       <th>A</th>
