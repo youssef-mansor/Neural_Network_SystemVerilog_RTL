@@ -13,7 +13,7 @@
 // limitations under the License.
 // SPDX-License-Identifier: Apache-2.0
 
-//`include "defs.vi"
+// `include "defs.vi"
 
 module special_check #(parameter  exp_width = 8, parameter mant_width = 24) 
 (

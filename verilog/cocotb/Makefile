@@ -3,6 +3,9 @@
 # defaults
 SIM ?= icarus
 TOPLEVEL_LANG ?= verilog
+#WAVEFORM_FILE = dump.vcd 
+#COMPILE_ARGS += -DICARUS_SIM
+WAVES=1
 
 # Specify Verilog source files
 VERILOG_SOURCES += ../rtl/NN.sv

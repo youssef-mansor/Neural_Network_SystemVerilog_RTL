@@ -1,3 +1,4 @@
+// `include "defs.vi"
 // `include "fpu_lib.sv"
 // `include "add_sub.sv"
 // `include "multiplier.sv"
@@ -45,7 +46,7 @@ module sigmoid_approx #(parameter exp_width = 8, parameter mant_width = 24)
   assign one_val =  32'h3f800000;  // 1.0 in FP representation
 
     // Register the output of divider once valid
-  always @(posedge clk or negedge rst_l) begin
+  always @(posedge clk) begin
           if(out_valid) begin
             out_sigmoid <= out_sigmoid_not_stbl;
           end

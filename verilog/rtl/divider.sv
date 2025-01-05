@@ -1,4 +1,5 @@
-//`include "fpu_lib.sv"
+// `include "defs.vi"
+// `include "fpu_lib.sv"
 
 // SPDX-FileCopyrightText: 2020 Efabless Corporation
 //

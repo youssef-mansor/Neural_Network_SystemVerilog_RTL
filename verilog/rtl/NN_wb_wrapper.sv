@@ -1,13 +1,13 @@
-//`include "defs.vi"
-//`include "fpu_lib.sv"
-//`include "add_sub.sv"
-//`include "multiplier.sv"
-//`include "divider.sv"
-//`include "matrix_multiply_1x2_2x1.sv"
-//`include "matrix_multiply_2x2_2x1.sv"
-//`include "sigmoid_v5.sv"
-//`include "NN_registers.sv"
-//`include "NN.sv"
+// `include "defs.vi"
+// `include "fpu_lib.sv"
+// `include "add_sub.sv"
+// `include "multiplier.sv"
+// `include "divider.sv"
+// `include "matrix_multiply_1x2_2x1.sv"
+// `include "matrix_multiply_2x2_2x1.sv"
+// `include "sigmoid_v5.sv"
+// `include "NN_registers.sv"
+// `include "NN.sv"
 
 module NN_wb_wrapper (
 `ifdef USE_POWER_PINS

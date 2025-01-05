@@ -1,8 +1,6 @@
 <testsuites name="results">
   <testsuite name="all" package="all">
-    <property name="random_seed" value="1735848940" />
-    <testcase name="nn_tb_001" classname="NN_cocotb" file="/home/youssef/anaconda3/lib/python3.11/site-packages/cocotb/regression.py" lineno="727" time="0.012885093688964844" sim_time_ns="0.001" ratio_time="0.07760905928502701">
-      <failure message="Test failed with RANDOM_SEED=1735848940" />
-    </testcase>
+    <property name="random_seed" value="1736086355" />
+    <testcase name="nn_tb" classname="NN_cocotb" file="/home/youssef/digital_design/Neural_Network_SystemVerilog_RTL/verilog/cocotb/NN_cocotb.py" lineno="6" time="0.0415341854095459" sim_time_ns="790.001" ratio_time="19020.50063604792" />
   </testsuite>
 </testsuites>

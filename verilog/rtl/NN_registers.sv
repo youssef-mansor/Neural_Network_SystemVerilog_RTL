@@ -1,4 +1,25 @@
 //`include "fpu_lib.sv"
+
+// module rvdffe #(
+//     parameter WIDTH = 8  // Default width is 8 bits
+// ) (
+//     input wire clk,        // Clock signal
+//     input wire rst_l,      // Active low reset
+//     input wire en,         // Enable input
+//     input wire [WIDTH-1:0] din, // Data input
+//     output reg [WIDTH-1:0] dout // Data output
+// );
+
+//     always @(posedge clk or negedge rst_l) begin
+//         if (!rst_l) begin
+//             dout <= {WIDTH{1'b0}}; // Reset output to 0 on reset
+//         end else if (en) begin
+//             dout <= din; // Load input to output on enable
+//         end
+//     end
+
+// endmodule
+ 
 module  NN_registers(
     input  wire         clk,
     input  wire         rst_l,

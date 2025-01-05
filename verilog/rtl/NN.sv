@@ -1,12 +1,12 @@
-// `include "defs.vi"
-// `include "fpu_lib.sv"
-// `include "add_sub.sv"
-// `include "multiplier.sv"
-// `include "divider.sv"
-// `include "matrix_multiply_1x2_2x1.sv"
-// `include "matrix_multiply_2x2_2x1.sv"
-// `include "sigmoid_v5.sv"
-// `include "NN_registers.sv"
+`include "defs.vi"
+`include "fpu_lib.sv"
+`include "add_sub.sv"
+`include "multiplier.sv"
+`include "divider.sv"
+`include "matrix_multiply_1x2_2x1.sv"
+`include "matrix_multiply_2x2_2x1.sv"
+`include "sigmoid_v5.sv"
+`include "NN_registers.sv"
 
 module NN #(
     parameter exp_width = 8,
