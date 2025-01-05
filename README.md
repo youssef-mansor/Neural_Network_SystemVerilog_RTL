@@ -197,8 +197,11 @@ Top Module is `NN` in  `NN.sv` that implements the mathematical model in figure 
 - `matrix_multiply_2x2_2x1`   
 - `sigmoid_approx`
 
-| In figure 5 For Neural Network calculations to be performed the NN module depends on NN registers for storing weights and biases and provision of NN inputs (A and B) that are affected by read/write instructions via the wishbone. Only when `in_valid_user` is set to high will the NN Operations commence and the result will be calculated by a forward pass. | `![][image14]` Figure5: NN module diagram |
-| :---- | :---- |
+![NN module diagram ](report/NN_diagram.png) 
+Figure5: NN module diagram 
+
+In figure 5 For Neural Network calculations to be performed the NN module depends on NN registers for storing weights and biases and provision of NN inputs (A and B) that are affected by read/write instructions via the wishbone. Only when `in_valid_user` is set to high will the NN Operations commence and the result will be calculated by a forward pass.  
+
 
 ### sigmoid\_approx Module
 
