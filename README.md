@@ -209,7 +209,8 @@ In figure 5 For Neural Network calculations to be performed the NN module depend
 <img src="report/sigmoid.png" alt="Sigmoid Module Diagram" width="400" >
 <p>Figure 6: Sigmoid Module Diagram</p>
 </div>
-|In figure 6 `out_valid` is a flag that indicates the readiness of the result at the `out_sigmoid` signal. It takes on average about 26 cycles for the result to be ready as this module depends on the `divider` module for which you can find more information in [Lampro-Mellon/Caravel\_FPU](https://github.com/Lampro-Mellon/Caravel_FPU/tree/main).
+
+In figure 6 `out_valid` is a flag that indicates the readiness of the result at the `out_sigmoid` signal. It takes on average about 26 cycles for the result to be ready as this module depends on the `divider` module for which you can find more information in [Lampro-Mellon/Caravel\_FPU](https://github.com/Lampro-Mellon/Caravel_FPU/tree/main).
 
 # Caravel Chip Integration
 
