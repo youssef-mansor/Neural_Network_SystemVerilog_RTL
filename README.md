@@ -137,15 +137,15 @@ Figure 2: Mathematical operations of NN in figure 1
 
 To test the Verilog implementation, navigate to **repo/verilog/cocotb**  and write command `make.` This will run a testbench with the aforementioned weights on the four test cases for `A` and `B`, and print the results which successfully match those obtained from the python script.
 
-![][image10]  
-Figure 3: results from cocotb test for the NN module
+<div align="center" text-align="center">
+<img src="report/cocotb.png" alt="cocotb test" width="400" >
+<p>Figure 3: results from cocotb test for the NN module</p>
+</div>
 
-**Note**: This test runs on commit \*\*\*. The cocotb test is currently invalid. Instead, use the following commands in `repo/verilog/tb`:
+**Note**: Instead, you can also run the .sv testbench by using the following commands in `repo/verilog/tb`:
 
 1. `iverilog -g2012 -I../rtl NN_tb.sv -Wall -o NN_tb`  
 2. `vvp NN_tb`"
-
-![][image11]
 
 ### Number format
 
