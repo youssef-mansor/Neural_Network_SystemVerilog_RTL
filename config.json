@@ -1,6 +1,0 @@
-{
-  "DESIGN_NAME": "NN",
-  "VERILOG_FILES": ["dir::verilog/rtl/NN.sv"],
-  "CLOCK_PERIOD": 25,
-  "CLOCK_PORT": "clk"
-}
