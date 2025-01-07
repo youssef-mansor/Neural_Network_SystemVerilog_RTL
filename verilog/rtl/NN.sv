@@ -1,12 +1,12 @@
-`include "defs.vi"
-`include "fpu_lib.sv"
-`include "add_sub.sv"
-`include "multiplier.sv"
-`include "divider.sv"
-`include "matrix_multiply_1x2_2x1.sv"
-`include "matrix_multiply_2x2_2x1.sv"
-`include "sigmoid_v5.sv"
-`include "NN_registers.sv"
+// `include "defs.vi"
+// `include "fpu_lib.sv"
+// `include "add_sub.sv"
+// `include "multiplier.sv"
+// `include "divider.sv"
+// `include "matrix_multiply_1x2_2x1.sv"
+// `include "matrix_multiply_2x2_2x1.sv"
+// `include "sigmoid_v5.sv"
+// `include "NN_registers.sv"
 
 module NN #(
     parameter exp_width = 8,
@@ -47,48 +47,35 @@ module NN #(
     assign wbs_dat_o = wren? 32'h00000000: int_wbs_dat_o; //if writting is enabled you can not read data
 
 
-    // Generate in_valid_pulse (pulse for one clock cycle)
+    // Generate in_valid_pulse and track out_valid signals
     reg in_valid_user_d; // Delayed signal to detect rising edge
     reg in_valid_pulse;  // Pulse signal
-    always @(posedge clk or negedge rst_l) begin
-        if (~rst_l) begin
-            in_valid_user_d <= 1'b0;
-            in_valid_pulse <= 1'b0;
-        end else begin
-            in_valid_user_d <= in_valid_user;
-            in_valid_pulse <= in_valid_user & ~in_valid_user_d;
-        end
-    end
-    
-    // Counter to track how many out_valid signals are high
     reg [1:0] out_valid_counter; // 2-bit counter
-
-    always @(posedge clk or negedge rst_l) begin
-        if (~rst_l) begin
-            out_valid_counter <= 2'b00;
-        end else begin
-            if (out_valid_sig1) begin
-                out_valid_counter[0] <= 1'b1; // Signal 1 is high
-            end
-            if (out_valid_sig2) begin
-                out_valid_counter[1] <= 1'b1; // Signal 2 is high
-            end
-        end
-    end
-
-    // Generate in_valid_sig3 pulse when counter reaches 2
     reg in_valid_sig3;
 
     always @(posedge clk or negedge rst_l) begin
         if (~rst_l) begin
+            in_valid_user_d <= 1'b0;
+            in_valid_pulse <= 1'b0;
+            out_valid_counter <= 2'b00;
             in_valid_sig3 <= 1'b0;
         end else begin
+            // Generate in_valid_pulse
+            in_valid_user_d <= in_valid_user;
+            in_valid_pulse <= in_valid_user & ~in_valid_user_d;
+            
+            // Handle out_valid counter and in_valid_sig3
             if (out_valid_counter == 2'b11) begin // Both signals are high
                 in_valid_sig3 <= 1'b1;  // Pulse in_valid_sig3
-                out_valid_counter[0] <= 1'b0; // Signal 1 is low
-                out_valid_counter[1] <= 1'b0; // Signal 2 is low
+                out_valid_counter <= 2'b00; // Reset counter
             end else begin
                 in_valid_sig3 <= 1'b0;  // Reset pulse after one cycle
+                if (out_valid_sig1) begin
+                    out_valid_counter[0] <= 1'b1; // Signal 1 is high
+                end
+                if (out_valid_sig2) begin
+                    out_valid_counter[1] <= 1'b1; // Signal 2 is high
+                end
             end
         end
     end

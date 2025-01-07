@@ -4,16 +4,20 @@
 // `include "multiplier.sv"
 // `include "divider.sv"
 
-module sigmoid_approx #(parameter exp_width = 8, parameter mant_width = 24)
-(
+module sigmoid_approx #(
+    parameter exp_width = 8,
+    parameter mant_width = 24,
+    // Add parameters for FP constants
+    parameter [(exp_width + mant_width - 1):0] HALF_VAL = 32'h3f000000, // 0.5 in FP
+    parameter [(exp_width + mant_width - 1):0] ONE_VAL  = 32'h3f800000  // 1.0 in FP
+)(
     input  wire [(exp_width + mant_width - 1):0] in_x,
     input  wire                                   clk,
     input  wire                                   rst_l,
-    input wire [2:0] round_mode,
-    input wire in_valid, //TODO update tb
-    output reg [(exp_width + mant_width - 1):0] out_sigmoid,
-   // output wire [4:0] exceptions,
-    output wire out_valid //indicates when output is ready because calculations take multiple cycles
+    input  wire [2:0]                            round_mode,
+    input  wire                                  in_valid,
+    output reg  [(exp_width + mant_width - 1):0] out_sigmoid,
+    output wire                                  out_valid
 );
 
   // Internal Wires for intermediate calculations
@@ -32,8 +36,8 @@ module sigmoid_approx #(parameter exp_width = 8, parameter mant_width = 24)
   wire [(exp_width + mant_width - 1):0] term1_pre;
   wire [(exp_width + mant_width - 1):0] term1_final;
   wire [(exp_width + mant_width - 1):0] term2_final;
-  wire [(exp_width + mant_width - 1):0] half_val;
-  wire [(exp_width + mant_width - 1):0] one_val;
+  // wire [(exp_width + mant_width - 1):0] half_val;
+  // wire [(exp_width + mant_width - 1):0] one_val;
   wire                                  x_is_negative;
   wire [(exp_width + mant_width - 1):0] out_sigmoid_not_stbl;
   
@@ -41,16 +45,30 @@ module sigmoid_approx #(parameter exp_width = 8, parameter mant_width = 24)
   // Error exception wires
   //wire [4:0] add_exceptions, sub_exceptions_1, sub_exceptions_2, div_exceptions_1, div_exceptions_2, mul_exceptions_1, mul_exceptions_2;
   
-    //  Assigning floating point values for 0.5 and 1
-  assign half_val = 32'h3f000000; // 0.5 in FP representation
-  assign one_val =  32'h3f800000;  // 1.0 in FP representation
+  //   //  Assigning floating point values for 0.5 and 1
+  // assign half_val = 32'h3f000000; // 0.5 in FP representation
+  // assign one_val =  32'h3f800000;  // 1.0 in FP representation
+  wire [(exp_width + mant_width - 1):0] half_val;
+  wire [(exp_width + mant_width - 1):0] one_val;
+  assign half_val = HALF_VAL;
+  assign one_val = ONE_VAL;
 
     // Register the output of divider once valid
+  // always @(posedge clk) begin
+  //         if(out_valid) begin
+  //           out_sigmoid <= out_sigmoid_not_stbl;
+  //         end
+  // end
+    // Add proper reset to output register
   always @(posedge clk) begin
-          if(out_valid) begin
-            out_sigmoid <= out_sigmoid_not_stbl;
-          end
+    if (!rst_l) begin
+      out_sigmoid <= {(exp_width + mant_width){1'b0}};
+    end
+    else if (out_valid) begin
+      out_sigmoid <= out_sigmoid_not_stbl;
+    end
   end
+
     
   // 1. Determine if x is negative (sign bit check)
   assign x_is_negative = in_x[(exp_width + mant_width - 1)];
