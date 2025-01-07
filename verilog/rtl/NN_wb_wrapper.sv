@@ -17,8 +17,8 @@ module NN_wb_wrapper (
 
     // IOs
     input  [37:0] io_in,  //connected to switches and used by user to confirm operaneds readiness.
-    output [37:0] io_out, //connected to LEDS
-    output [37:0] io_oeb,
+    output [37:0] io_out, //connected to LEDS to indicate the result of the NN
+    output [37:0] io_oeb, //output enable for the IOs
 
     // Wishbone Slave ports (WB MI A)
     input wb_clk_i,
