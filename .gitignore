@@ -1,0 +1,21 @@
+/build/
+   /out/
+   /bin/
+   /obj/
+   *.tmp
+   *.log
+   *.swp
+   *.o
+   *.so
+   *.dll
+   *.exe
+   *.vcd
+   *.wlf
+   *.vvp
+   *.d
+   *.dep
+   *.map
+   *.lst
+   *.elf
+   *.hex
+   *.bin
